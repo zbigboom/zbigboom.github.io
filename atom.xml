@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://Zhou_PBD.github.io</id>
+    <id>https://zbigboom.github.io</id>
     <title>Gridea</title>
-    <updated>2020-11-29T11:00:53.649Z</updated>
+    <updated>2020-11-29T11:08:29.731Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://Zhou_PBD.github.io"/>
-    <link rel="self" href="https://Zhou_PBD.github.io/atom.xml"/>
+    <link rel="alternate" href="https://zbigboom.github.io"/>
+    <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://Zhou_PBD.github.io/images/avatar.png</logo>
-    <icon>https://Zhou_PBD.github.io/favicon.ico</icon>
+    <logo>https://zbigboom.github.io/images/avatar.png</logo>
+    <icon>https://zbigboom.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[第一次]]></title>
-        <id>https://Zhou_PBD.github.io/post/di-yi-ci/</id>
-        <link href="https://Zhou_PBD.github.io/post/di-yi-ci/">
+        <id>https://zbigboom.github.io/post/di-yi-ci/</id>
+        <link href="https://zbigboom.github.io/post/di-yi-ci/">
         </link>
         <updated>2020-11-29T10:31:32.000Z</updated>
         <content type="html"><![CDATA[<p>第一次尝试</p>
