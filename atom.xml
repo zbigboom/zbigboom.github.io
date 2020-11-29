@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zbigboom.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-11-29T11:22:35.698Z</updated>
+    <title>ZBigBoom</title>
+    <updated>2020-11-29T11:23:26.289Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zbigboom.github.io"/>
     <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>我的世界</subtitle>
     <logo>https://zbigboom.github.io/images/avatar.png</logo>
     <icon>https://zbigboom.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, ZBigBoom</rights>
     <entry>
         <title type="html"><![CDATA[1111]]></title>
         <id>https://zbigboom.github.io/post/1111/</id>
