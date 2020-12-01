@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-		<head>
+	<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimal-ui" />
-    <title>ZBigBoom</title>
+    <title>[微机]第一章计算机基础 | ZBigBoom</title>
 <link rel='stylesheet' id='puma-css'  href='https://zbigboom.github.io/styles/main.css' type='text/css' media='screen' />
 <link rel='stylesheet' id='puma-css'  href='https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css' media='screen' />
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -13,7 +13,7 @@
          <script >hljs.initHighlightingOnLoad();</script>
          
 </head>
-<body class="page page-id-16 page-template page-template-template-links page-template-template-links-php">
+<body class="single single-post postid-3788 single-format-standard">
 	<!--加入跟随滑动的顶部-->
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
@@ -45,15 +45,60 @@
 	<div class="surface-content">    <main class="main-content">
         <section class="section-body">
                             <header class="section-header u-textAlignCenter">
-                    <h2 class="grap--h2">标签</h2>
+                    <h2 class="grap--h2">[微机]第一章计算机基础</h2>
+                    <div class="block-postMetaWrap">
+                        <time>2020-12-01</time>
+                    </div>
                 </header>
                 <div class="grap">
+					
+					<p>计算机在本质上只能识别0，1表示的二进制数码。一个数在机器中的表示形式称为机器数。</p>
+<h3 id="机器数有以下特点">机器数有以下特点</h3>
+<p>①机器数的正负号都是数值化的。（一般首位为符号位，0表示正数1表示负数）<br>
+②机器数所表示的数的范围收机器字长的限制。</p>
+<h3 id="机器字长">机器字长</h3>
+<p>①位（bit）：是计算机所能表示的最小数据单位，它只有0，1两种状态。<br>
+②字节（Byte）：是一个8位二进制数。<br>
+③字（Word）：一般指16位二进制数，也就是两个字节。<br>
+④字长（Word Length）：指处理器的二进制位数，是衡量计算机性能的一个重要标志，字长越长精度越高性能越强。</p>
+<h3 id="进制简写">进制简写</h3>
+<p>二进制-B    八进制-O或Q   十进制-D   十六进制-H</p>
+<h3 id="数的表示方法">数的表示方法</h3>
+<p>①原码：是数值部分为绝对值，加上0，1表示的“+”“-”的机器数。<br>
+②反码：正数的反码与原码相同，负数的反码符号位不变为1，其余位取反。<br>
+③补码：正数的补码与原码相同，负数的补码先求反码之后在反码末位加1就是负数的补码。<br>
+小结：<br>
+①有符号数的三种编码最高位都是符号位。<br>
+②正数的三种编码相同。<br>
+③8位二进制原码反码补码的数值表示范围不同，分别是-127<sub>+127，-127</sub>+127，-128~+127。<br>
+补码的运算：<br>
+（x+y）补=2^n+（x+y）=（x）补+（y）补<br>
+（x-y）补=2^n+（x-y）=（x）补+（-y）补<br>
+（-y）补可以通过连同符号位在内一起取反后+1（求补）<br>
+注意：两个数相加之后可能会出现负数的情况，这种情况为“溢出”。<br>
+小结：<br>
+①补码运算时运算数为补码结果也是补码，根据要求可能会有编码转换。<br>
+②在进行减法运算时变为加负数的运算，简化硬件设计。<br>
+③运算时Ⅰ 符号位与数值位一起参加运算Ⅱ符号位产生的进位可舍弃Ⅲ要保证运算结果不超过补码所能表示的数的最大范围，否则会出现“溢出”错误。<br>
+④无符号数和有符号数的加法运算可用同一电路完成</p>
+<h3 id="定点数和浮点数">定点数和浮点数</h3>
+<p>定点表示法时小数位置在数中固定不变<br>
+①定点纯小数：把小数点固定在最高数值位左边。（小数点本身不占位只是约定固定小数点的位置）<br>
+②定点纯整数：把小数点固定在最低数值位右边。<br>
+浮点数：把一个数通过改变小数点的位置表示成2的p次幂和绝对值小于1的数s相乘的形式。</p>
+<center>N=(2^p)*S</center>
+N称为浮点数或实数，S是N的尾数
+<p><strong>例 1011.1101 B=（0.10111101 B）<em>（2^4）= 0.10111101</em>(2^100) B</strong><br>
+先转化位小数*2^p的形式，然后将p转化为二进制的形式，根据格式要求在不同数位填入数值即得到想要的浮点数。</p>
 
-                    <ul class="friend">
-							
-					<li><a href="https://zbigboom.github.io/tag/Q15tzHKEE/" target="_blank" title="微机" >微机</a></li>		           </ul>
                 </div>
-                   </section>
+
+                <div class="post--keywords" itemprop="keywords">
+					 <a href="https://zbigboom.github.io/tag/Q15tzHKEE/" class="post--keyword" data-title="微机" data-type="post_tag" data-term-id="39">微机</a>           </div>
+
+
+
+                      </section>
     </main>
 </div>
 	<footer class="site-footer u-textAlignCenter">
