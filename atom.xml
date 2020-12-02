@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zbigboom.github.io</id>
     <title>ZBigBoom</title>
-    <updated>2020-12-02T12:11:20.809Z</updated>
+    <updated>2020-12-02T13:55:59.715Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zbigboom.github.io"/>
     <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://zbigboom.github.io/images/avatar.png</logo>
     <icon>https://zbigboom.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZBigBoom</rights>
+    <entry>
+        <title type="html"><![CDATA[[微机]第二章8086微处理器]]></title>
+        <id>https://zbigboom.github.io/post/4/</id>
+        <link href="https://zbigboom.github.io/post/4/">
+        </link>
+        <updated>2020-12-02T13:20:07.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="8086cpu基本结构">8086CPU基本结构</h3>
+<p>8086由两个独立的处理部件组成：执行部件EU和总线接口部件BIU。<br>
+①执行机构EU：包括8个16位寄存器（通用寄存器AX、BX、CX、DX；指针寄存器SP、BP；变址寄存器SI、DI）算数逻辑部件ALU、标志寄存器FR、暂存寄存器和EU控制系统。<br>
+②总线接口部件BIU：由4个段寄存器（CS、SS、DS、ES）指令指针IP、内部通信寄存器、指令队列、总线控制逻辑和地址加法器组成。</p>
+<h3 id="特点">特点</h3>
+<p>①取指令与执行指令重叠并行（指令流水线）。<br>
+②段寄存器和储存器分段：8086有四个段寄存器，代码段寄存器CS、数据段寄存器DS、堆栈段寄存器SS、附加数据段寄存器ES。<br>
+每个段的物理长度是64K。<br>
+基于存储器的分段结构，在涉及储存器的地址时，必须分清是物理地址还是逻辑地址。CPU访问存储器时地址总线送出的是物理地址，编写程序时则采用逻辑地址，逻辑地址由短地址和偏移量组成。<br>
+物理地址计算公式：</p>
+<center>物理地址=段地址*16+偏移量</center>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="8086cpu基本结构">8086CPU基本结构</h3>
+<p>8086由两个独立的处理部件组成：执行部件EU和总线接口部件BIU。<br>
+①执行机构EU：包括8个16位寄存器（通用寄存器AX、BX、CX、DX；指针寄存器SP、BP；变址寄存器SI、DI）算数逻辑部件ALU、标志寄存器FR、暂存寄存器和EU控制系统。<br>
+②总线接口部件BIU：由4个段寄存器（CS、SS、DS、ES）指令指针IP、内部通信寄存器、指令队列、总线控制逻辑和地址加法器组成。</p>
+<h3 id="特点">特点</h3>
+<p>①取指令与执行指令重叠并行（指令流水线）。<br>
+②段寄存器和储存器分段：8086有四个段寄存器，代码段寄存器CS、数据段寄存器DS、堆栈段寄存器SS、附加数据段寄存器ES。<br>
+每个段的物理长度是64K。<br>
+基于存储器的分段结构，在涉及储存器的地址时，必须分清是物理地址还是逻辑地址。CPU访问存储器时地址总线送出的是物理地址，编写程序时则采用逻辑地址，逻辑地址由短地址和偏移量组成。<br>
+物理地址计算公式：</p>
+<center>物理地址=段地址*16+偏移量</center>
+<!-- more -->
+<h3 id="寄存器配置">寄存器配置</h3>
+<p>Ⅰ通用寄存器：8086有8个16位通用寄存器，8个通用寄存器分两组。<br>
+第一组：AX、BX、CX、DX，他们又可以分成两个8位寄存器，当处理字节指令时，用8位寄存器，处理字指令时，用16位寄存器。<br>
+特殊用法：BX寄存器在计算地址时用作基址寄存器；CX寄存器在操作指令中用作计数器；DX寄存器在某些I/O操作期间用来保存I/O端口地址。<br>
+第二组：堆栈指针SP、基地址指针BP、源变址寄存器SI、目的变址寄存器DI，4个16位寄存器。<br>
+这组寄存器的目的是：①算短指令代码的长度②在程序运行过程中，允许指令访问这样的存储单元，他们在段内的偏移量正是前面指令的计算结果③用于寄存偏移量，与段寄存器内容相加获得物理地址。</p>
+<p>P31未完</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[微机]第一章计算机基础]]></title>
         <id>https://zbigboom.github.io/post/3/</id>
