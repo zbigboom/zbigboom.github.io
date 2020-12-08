@@ -326,6 +326,170 @@ pushf指令的执行过程同push指令，只是将标志寄存器FR的内容压
 <p>输入/输出数据传送指令in/out<br>
 指令格式：in OPRD1，OPRD2<br>
 功能：这组指令专门用于在AL或AX寄存器与I/O端口之间传送数据。</p>
+<h3 id="算术运算类指令">算术运算类指令</h3>
+<p>Ⅰ二进制加减法类算术运算指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加法</td>
+<td>add 目标，源</td>
+</tr>
+<tr>
+<td>带进位加法</td>
+<td>adc 目标，源</td>
+</tr>
+<tr>
+<td>加1</td>
+<td>inc 目标</td>
+</tr>
+<tr>
+<td>减法</td>
+<td>sub 目标，源</td>
+</tr>
+<tr>
+<td>带借位减法</td>
+<td>sbb 目标，源</td>
+</tr>
+<tr>
+<td>减1</td>
+<td>dec 目标</td>
+</tr>
+<tr>
+<td>取负</td>
+<td>neg 目标</td>
+</tr>
+<tr>
+<td>比较</td>
+<td>cmp 目标，源</td>
+</tr>
+</tbody>
+</table>
+<p>①加/减法指令add/sub<br>
+指令格式：add/sub OPRD1，OPRD2<br>
+功能：完成两个操作数的加/减运算，结果送入目标操作数，即OPRD1±OPRD2-&gt;OPRD1<br>
+注意：要求源操作数和目标操作数同为带符号数或无符号数，且长度相等。源操作数可以是寄存器、存储器、或立即数，目标操作数只能是寄存器或存储器，且两个操作数不能同时为存储器。运算影响全部状态标志位。</p>
+<p>②带进/借位的加/减法指令adc/sbb<br>
+指令格式：adc/sbb OPRD1，OPRD2<br>
+功能：adc/sbb指令常与add/sub配合，用于两个或两个以上的多进度数的运算，除了加法操作时加上的进位或减法时的借位，它们同add/sub指令的使用注意事项和对标志位的影响情况相同。</p>
+<p>③增量和减量指令inc/dec<br>
+指令格式：inc/dec OPRD<br>
+功能：inc/dec是单操作数指令，完成对指定操作数的加一减一，然后返回运算结果。<br>
+主要是用于调整地址指针和计数器，所以不影响CF标志。</p>
+<p>④求补指令neg<br>
+指令格式：neg OPRD<br>
+功能：对操作数求补，即用0减去操作数，再把结果送回操作数，求补运算也可以表达将操作数按位取反加一，neg指令影响所有状态标志位。</p>
+<p>⑤比较指令cmp<br>
+指令格式：cmp OPRD1，OPRD2<br>
+功能：cmp将计算OPRD1-OPRD2，但运算结果不返回OPRD1，即cmp指令与sub执行同样的操作，同样影响标志位，只是不改变操作数本身。参加比较的源操作数可以是立即数、寄存器或存储器操作数，目标操作数只能是寄存器或存储器操作数。<br>
+如果是两个无符号数比较，若CF=1则OPRD1 &lt; OPRD2；若CF=0，则OPRD1 &gt; OPRD2<br>
+如果是两个带符号数比较，SF异或OF=1则OPRD1 &lt; OPRD2；SF异或OF=0则OPRD1 &gt; OPRD2<br>
+无论操作数是否带符号ZF=1则OPRD1=OPRD2。</p>
+<p>Ⅱ二进制乘/除法指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不带符号乘法</td>
+<td>mul</td>
+</tr>
+<tr>
+<td>带符号乘法</td>
+<td>imul</td>
+</tr>
+<tr>
+<td>不带符号除法</td>
+<td>div</td>
+</tr>
+<tr>
+<td>带符号除法</td>
+<td>idiv</td>
+</tr>
+</tbody>
+</table>
+<p>①乘法指令mul/imul<br>
+指令格式：mul/imul OPRD<br>
+功能：mul/imul指令分别用于实现无符号数的乘法和有符号数的乘法，他们都只有一个源操作数，源操作数可以是寄存器或存储器，而目标操作数隐含规定在累加器中。<br>
+若OPRD为字节则ALxOPRD乘积存于AX；若OPRD为字则AXxOPRD乘积的高16位存于DX低16位存于AX中。由于乘法指令保留了2倍于原来操作数的存储空间，因而不会出现溢出现象。</p>
+<p>②除法指令div/idiv<br>
+指令格式：div/idiv OPRD<br>
+对于字节除法，被除数在AX中，除数即OPRD（字节）商在AL中，余数在AH中；对于字除法，被除数高位在DX中，低位在AX中，除数OPRD（字），商在AX中，余数在DX中。若商超过存放它的寄存器容量，则会引起0型中断，且商和余数为不定值。<br>
+注意：在除法运算中，要求被除数的长度为除数长度的2倍，若被除数和除数是具有相同位数的字节或字，这是需要将被除数扩展为字或双字，且大小符号不变，然后再相除。</p>
+<p>Ⅲ符号扩展指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字节转换字</td>
+<td>cbw</td>
+</tr>
+<tr>
+<td>字转换双字</td>
+<td>cwd</td>
+</tr>
+</tbody>
+</table>
+<p>符号扩展指令cbw/cwd<br>
+指令格式cbw/cwd<br>
+功能：cbw/cwd分别用于将有符号操作数从字节转换成字或从字转换为双字，操作数隐含规定在累加器中。<br>
+cbw将AL中的字节符号数的符号扩展到AH；cwd将AX中的子符号数的符号扩展到DX中。<br>
+注意：对无符号数，可采用直接使高位置‘0’的方法进行扩展。</p>
+<p>ⅣBCD（十进制）运算调整指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>非压缩BCD数的加法调整</td>
+<td>aaa</td>
+</tr>
+<tr>
+<td>压缩BCD数的加法调整</td>
+<td>daa</td>
+</tr>
+<tr>
+<td>非压缩BCD数的减法调整</td>
+<td>aas</td>
+</tr>
+<tr>
+<td>压缩BCD数的减法调整</td>
+<td>das</td>
+</tr>
+<tr>
+<td>非压缩BCD数的乘法调整</td>
+<td>aam</td>
+</tr>
+<tr>
+<td>非压缩BCD数的除法调整</td>
+<td>aad</td>
+</tr>
+</tbody>
+</table>
+<p>①非压缩BCD数加/减法调整指令aaa/aas<br>
+功能：aaa/aas用于将AL中的两个非压缩BCD数相加/减后的结果进行调整，以得到正确的非压缩BCD和/差，程序中它们紧跟在add/sub指令之后。</p>
+<p>②压缩BCD数加/减法调整指令daa/das<br>
+功能：用于将AL中两个压缩BCD数相加/减的结果进行校正，以得到正确的压缩BCD和/差。程序中它们紧跟在add/sub指令之后。</p>
+<p>③非压缩BCD数乘/除法调整指令aam/aad<br>
+功能：aam紧跟在mul指令之后，将AX中两个1位非压缩BCD数相乘的结果进行调整；aad在两个非压缩BCD数的除法运算之前，先调整AL和AH中的内容，再用div指令相除。</p>
 
                 </div>
 
