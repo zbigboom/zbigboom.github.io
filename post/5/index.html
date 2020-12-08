@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimal-ui" />
+    <title>[微机]第三章指令系统 | ZBigBoom</title>
+<link rel='stylesheet' id='puma-css'  href='https://zbigboom.github.io/styles/main.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='puma-css'  href='https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css' media='screen' />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://zbigboom.github.io/media/scripts/jquery.js'></script>
+<script type='text/javascript' src='https://zbigboom.github.io/media/scripts/jquery-migrate.min.js'></script>
+        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
+         
+</head>
+<body class="single single-post postid-3788 single-format-standard">
+	<!--加入跟随滑动的顶部-->
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title">
+				<a href="https://zbigboom.github.io" title="ZBigBoom">ZBigBoom</a>
+			</h1>
+		</div>
+
+		<a class="primary-nav-trigger" href="javascript:void(0)">
+			<span class="menu-icon"></span>
+		</a>
+		
+	</header>
+		<div class="site-navigation-wrapper">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<ul class="primary-nav">
+                    
+				<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a title="Home" href="https://zbigboom.github.io">Home</a></li>
+                
+				<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a title="学习笔记" href="https://zbigboom.github.io/tags">学习笔记</a></li>
+                
+				<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a title="文章归档" href="https://zbigboom.github.io/archives">文章归档</a></li>
+                
+	
+			</ul>
+		</nav>			
+	</div>
+	<!--跟随滑动的顶部结束-->
+	<div class="surface-content">    <main class="main-content">
+        <section class="section-body">
+                            <header class="section-header u-textAlignCenter">
+                    <h2 class="grap--h2">[微机]第三章指令系统</h2>
+                    <div class="block-postMetaWrap">
+                        <time>2020-12-08</time>
+                    </div>
+                </header>
+                <div class="grap">
+					
+					<h3 id="指令格式">指令格式</h3>
+<p>一般格式如下：<br>
+指令助记符  操作数列表 ；注释<br>
+指令助记符是指令的名称，对应机器指令中的操作码部分，操作数可以有多个，因指令不同而不同，按序排列并用“，”分开。“；”之后是注释部分，不影响指令操作。</p>
+<h3 id="有效地址ea">有效地址EA</h3>
+<p>指令中的操作数有三个可能存放位置<br>
+①操作数包含在指令中，即指令的操作数部分就是操作数本身，这种操作数叫做立即数，对应的寻址方式称为立即寻址。</p>
+<p>②操作数存放在CPU的某个内部寄存器中，称为寄存器操作数，这时指令的操作数部分是CPU内部寄存器的编码，对应寻址方式称为寄存器寻址。</p>
+<p>③操作数在内存的数据区中，称为存储器操作数，这时指令的操作数部分给出操作数的存储地址，指令执行时需要根据该地址找到需要的操作数，这种寻址方式称为存储器寻址。<br>
+组成有效地址EA的基本部分可以包括：基址寄存器内容；变址寄存器内容；位移量；比例因子。</p>
+<center>EA=（基址寄存器）+（变址寄存器x比例因子）+位移量</center>
+<p>基址寄存器：BX，BP<br>
+变址寄存器：SI，DI<br>
+比例因子：1<br>
+位移量：0，8，16（位）</p>
+<h3 id="各种寻址方式">各种寻址方式</h3>
+<p>Ⅰ立即寻址<br>
+立即寻址方式下，操作数作为立即数包含在指令中，它紧跟在操作码之后与其一起存放在代码段区域。<br>
+Ⅱ寄存器寻址<br>
+寄存器寻址方式的操作数存放在指令规定的8位、16位CPU内部寄存器中。<br>
+这是CPU内部操作，不需要使用访问总线周期，所以指令的执行速度较快。<br>
+Ⅲ存储器寻址方式<br>
+存储器寻址时，操作数是在存储区中，指令的操作数部分指出此操作数的有效地址EA，而段地址在默认的或段超越前缀指定的段寄存器中。根据EA的不同组合方式，存储器寻址方式又可以分为以下：</p>
+<p>①直接寻址：直接寻址是一种最简单的存储器寻址方式。在这种寻址方式下，指令中操作数部分直接给出操作数的有效地址EA，与操作码一起放在代码段中。操作数一般在数据段DS中。如果要对除DS段之外的其他段中的数据寻址，应在指令中增加段超越前缀指出段寄存器名。<br>
+例如：<br>
+mov  AX，[2000H]；将DS段中2000H和2001H单元内容送入AL和AH<br>
+mov AX，ES：[2000H]；将ES段中2000H和2001H单元内容送入AL和AH</p>
+<p>②寄存器间接寻址：操作数在存储区内，操作数的有效地址EA在指令指定的寄存器中，即EA=（寄存器）<br>
+以SI、DI、BX间接寻址，则默认操作数在数据段中<br>
+mov  AX，[SI]；默认DS为段地址<br>
+以BP间接寻址，则默认操作数在堆栈段中<br>
+mov  AX，[BP]；默认为SS为段地址<br>
+若操作数不在上述规定的默认段则必须在指令的相应操作数前加上段超越前缀。<br>
+mov  CX，DS：[BP]；DS是该指令的段超越前缀<br>
+直接寻址中有效地址EA来自指令自身，相当于一个常量。寄存器间接寻址中有效地址EA来自寄存器，寄存器的内容由前面的指令确定，相当于一个变量。</p>
+<p>③基址寻址：这种寻址方式下，操作数的有效地址EA=（基址寄存器）+位移量，式中位移量在指令中给出并与操作码一起存放在代码段中。<br>
+BP和BX作为基址寄存器。默认情况下，BX以DS作为段寄存器，BP以SS作为段寄存器，可以段超越，位移量是8位或16位。</p>
+<p>④变址寻址：变址寻址方式下，有效地址EA=（变址寄存器）+位移量，它的指令格式及寻址过程与基址寻址相同，区别仅在于将基址寄存器改成变址寄存器。<br>
+SI和DI作为变址寄存器，且默认DS作为段寄存器。基址或变址寻址非常适于对一维数组元素进行检索操作，常用为ui连表示数组起始地址，基址或变址寄存器表示数组元素的可变下标。</p>
+<p>⑤比例变址寻址：这种寻址方式只适合32位寻址的情况。（了解）</p>
+<p>⑥基址加变址寻址：这种寻址方式中，操作数的有效地址EA=（基址寄存器）+（变址寄存器）。<br>
+基址、变址寄存器的使用规定和段寄存器的默认规定与前面所述相同，但要注意当一种寻址方式中的基址、变址寄存器默认的段寄存器不同时，一般由基址寄存器来决定默认哪一个段寄存器作短地址。若在指令中规定了段超越则可用其他段寄存器作为短地址。例如：<br>
+mov  AX，[BX+SI]；或写成mov  AX，[BX][SI]，BX决定默认DS为段寄存器<br>
+基址加变址寻址适合检索二维数组元素和双重循环等操作。<br>
+⑦基址加比例变址寻址：这种寻址方式只适合32位寻址情况。（了解 ）</p>
+<p>⑧带位移量的基址加变址寻址：这种寻址方式下，有效地址EA=（基址寄存器）+（变址寄存器）+位移量。<br>
+基址、变址寄存器的使用规定和对段寄存器的默认规定与前面所述相同。例如：<br>
+mov  AX，[BX+SI+MASK]；或写成mov  AX，MASK[BX][SI]<br>
+带位移量的基址加变址寻址也适用于对二维数组操作，位移量即为数组起始地址。</p>
+<p>⑨带位移量的基址加比例变址寻址：这种寻址适用于32位寻址情况。（了解）</p>
+<h3 id="存储器寻址时的段约定">存储器寻址时的段约定</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">访问存储器类型</th>
+<th style="text-align:center">默认段寄存器</th>
+<th style="text-align:center">允许超越的段寄存器</th>
+<th style="text-align:center">偏移地址寄存器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">取指令</td>
+<td style="text-align:center">CS</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">IP</td>
+</tr>
+<tr>
+<td style="text-align:center">堆栈操作</td>
+<td style="text-align:center">SS</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">SP</td>
+</tr>
+<tr>
+<td style="text-align:center">源串数据访问</td>
+<td style="text-align:center">DS</td>
+<td style="text-align:center">CS、ES、SS</td>
+<td style="text-align:center">SI</td>
+</tr>
+<tr>
+<td style="text-align:center">目的串数据访问</td>
+<td style="text-align:center">ES</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">DI</td>
+</tr>
+<tr>
+<td style="text-align:center">通用数据访问</td>
+<td style="text-align:center">DS</td>
+<td style="text-align:center">CS、ES、SS</td>
+<td style="text-align:center">偏移地址EA</td>
+</tr>
+<tr>
+<td style="text-align:center">以BP、SP间接寻址指令</td>
+<td style="text-align:center">SS</td>
+<td style="text-align:center">CS、DS、ES</td>
+<td style="text-align:center">偏移地址EA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cpu指令系统">CPU指令系统</h3>
+<p>指令操作数符号说明</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">OPRD，OPRDN</td>
+<td style="text-align:center">操作数；第N个操作数，如OPRD1，OPRD2</td>
+</tr>
+<tr>
+<td style="text-align:center">DEST，SRC</td>
+<td style="text-align:center">目的操作数，源操作数</td>
+</tr>
+<tr>
+<td style="text-align:center">reg</td>
+<td style="text-align:center">通用寄存器，长度可以是8位或16位</td>
+</tr>
+<tr>
+<td style="text-align:center">reg8</td>
+<td style="text-align:center">8位通用寄存器AH/AL/BH/BL/CH/CL/DH/DL</td>
+</tr>
+<tr>
+<td style="text-align:center">reg16</td>
+<td style="text-align:center">16位通用寄存器AX/BX/CX/DX/SI/DI/BP/SP</td>
+</tr>
+<tr>
+<td style="text-align:center">Sreg</td>
+<td style="text-align:center">段寄存器DS/CS/SS/ES</td>
+</tr>
+<tr>
+<td style="text-align:center">mem</td>
+<td style="text-align:center">存储器操作数，长度可以是8位或16位</td>
+</tr>
+<tr>
+<td style="text-align:center">imm</td>
+<td style="text-align:center">立即数，长度可以是8位或16位</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据传送类指令">数据传送类指令</h3>
+<p>Ⅰ通用数据传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字节或字传送</td>
+<td>mov 目标，源</td>
+</tr>
+<tr>
+<td>字压入堆栈</td>
+<td>push 源</td>
+</tr>
+<tr>
+<td>字弹出堆栈</td>
+<td>pop 目标</td>
+</tr>
+<tr>
+<td>字节或字交换</td>
+<td>xchg 目标，源</td>
+</tr>
+<tr>
+<td>字节翻译</td>
+<td>xlat</td>
+</tr>
+</tbody>
+</table>
+<p>①mov指令<br>
+指令格式：mov OPRD1，OPRD2<br>
+功能：将源操作数传送给目标操作数，即OPRD2-&gt;OPRD1，源操作数保持不变。<br>
+注意：OPRD1和OPRD2的长度一致；立即数和段寄存器CS不能作为目标操作数；立即数不能直接传送到段寄存器；不允许在两个存储单元之间或在两个段寄存器之间直接传送数据；将立即数传送到存储单元时，必须显式说明存储器操作数的宽度类型。</p>
+<p>②堆栈操作指令push/pop<br>
+指令格式：push OPERD2；pop OPRD1<br>
+功能：push指令使SP-2-&gt;SP，然后将16位源操作数压入堆栈。入栈时高字节存放在高地址，源操作数可以是通用寄存器、段寄存器和存储器。<br>
+pop指令使SP+2-&gt;SP，弹出时低地址字节送低字节，使SP指向新的栈顶，目标操作数可以是通用寄存器、段寄存器（CS除外）或存储器。</p>
+<p>③交换指令xchg<br>
+指令格式：xchg OPRD1，OPRD2<br>
+功能：将长度相同的源操作数与目标操作数进行交换。<br>
+注意：段寄存器和立即数不能作为操作数；不能在两个存储单元之间之间交换数据。</p>
+<p>④查表转换指令xlat（或称换码指令）<br>
+指令格式：xlat或xlat OPRD<br>
+功能：完成1字节的查表转换。它将数据段中偏移地址位（BX+AL）的存储单元的内容送入AL寄存器，即DS：[BX+AL]-&gt;AL。<br>
+xlat指令对于一些无规律的代码转换特别方便，使用时在数据段建立一个长度小于256字节的表格，表的首地址置于BX中AL中存放查找对象在表中的下标，指令执行后，所查找的对象存于AL中，BX内容保持不变。</p>
+<p>Ⅱ地址传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>装入有效地址</td>
+<td>lea 目标，源</td>
+</tr>
+<tr>
+<td>装入逻辑地址</td>
+<td>lds 目标，源</td>
+</tr>
+<tr>
+<td>装入逻辑地址</td>
+<td>les 目标，源</td>
+</tr>
+</tbody>
+</table>
+<p>①有效地址传送指令lea<br>
+指令格式：lea OPRD1，OPRD2<br>
+功能：将源操作数在当前段内的有效地址（即偏移地址）传送至目标操作数。<br>
+注意：这条指令同mov指令的区别是，mov指令传送操作数的内容，而lea传送的是操作数的存储地址。</p>
+<p>②地址指针传送指令lds和les<br>
+指令格式：lds/les OPRD1，OPRD2<br>
+功能：这两条指令的功能类似，都是将源操作数偏移地址的双字存储单元中的第一个字的内容送入指定的16位通用寄存器，第二个字的内容传送给段寄存器DS或ES。</p>
+<p>Ⅲ标志位传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>将标志寄存器FR低字节装入AH</td>
+<td>lahf</td>
+</tr>
+<tr>
+<td>将AH内容装入FR低字节</td>
+<td>sahf</td>
+</tr>
+<tr>
+<td>将FR内容压入堆栈</td>
+<td>pushf</td>
+</tr>
+<tr>
+<td>从堆栈弹出FR内容</td>
+<td>popf</td>
+</tr>
+</tbody>
+</table>
+<p>①标志寄存器读/写指令lahf/sahf<br>
+功能：lahf用于用于将标志寄存器的低字节（含SF、ZF、AF、PF、CF）读出后送给AH寄存器，本条指令本身不影响标志位。sahf与lahf的操作相反。</p>
+<p>②标志寄存器入栈/出栈指令pushf/popf<br>
+pushf指令的执行过程同push指令，只是将标志寄存器FR的内容压入堆栈，popf则是将当前栈顶的一个字传送给标志寄存器FR，同时修改栈顶指针SP。</p>
+<p>ⅣI/O数据传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入字节或字</td>
+<td>in 累加器，端口</td>
+</tr>
+<tr>
+<td>输出字节或字</td>
+<td>out 端口，累加器</td>
+</tr>
+</tbody>
+</table>
+<p>输入/输出数据传送指令in/out<br>
+指令格式：in OPRD1，OPRD2<br>
+功能：这组指令专门用于在AL或AX寄存器与I/O端口之间传送数据。</p>
+
+                </div>
+
+                <div class="post--keywords" itemprop="keywords">
+					 <a href="https://zbigboom.github.io/tag/Q15tzHKEE/" class="post--keyword" data-title="微机" data-type="post_tag" data-term-id="39">微机</a>           </div>
+
+
+
+                      </section>
+    </main>
+</div>
+	<footer class="site-footer u-textAlignCenter">
+    	<div class="footer-branding">
+            <a href="https://zbigboom.github.io" title="ZBigBoom">ZBigBoom</a>
+									<p class="site-description">ZXL</p>
+			         </div>
+		 <hr />
+		 <div class="social-links">
+		                       
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            	
+			<span class="social-link"><a href="https://raw.githubusercontent.com/zbigboom/Picgo/master/QQ.png" target="_blank"><i class="iconfont icon-qq"></i></a></span>	
+			                         
+                           
+                            
+                           
+                            
+                           
+				</div>
+        <div class="footer-copy">
+                Mr. Zhou's private space
+        </div>
+
+    </footer>
+	<div class="back-to-top u-hide" onclick="backToTop();"><i class="iconfont icon-xiangshang"></i></div>
+
+<script type='text/javascript' src='https://zbigboom.github.io/media/scripts/main.js'></script>
+</body>
+</html>

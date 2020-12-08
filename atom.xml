@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zbigboom.github.io</id>
     <title>ZBigBoom</title>
-    <updated>2020-12-03T14:55:37.156Z</updated>
+    <updated>2020-12-08T15:22:19.129Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zbigboom.github.io"/>
     <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
@@ -11,23 +11,293 @@
     <icon>https://zbigboom.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZBigBoom</rights>
     <entry>
+        <title type="html"><![CDATA[[微机]第三章指令系统]]></title>
+        <id>https://zbigboom.github.io/post/5/</id>
+        <link href="https://zbigboom.github.io/post/5/">
+        </link>
+        <updated>2020-12-08T10:33:00.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="指令格式">指令格式</h3>
+<p>一般格式如下：<br>
+指令助记符  操作数列表 ；注释<br>
+指令助记符是指令的名称，对应机器指令中的操作码部分，操作数可以有多个，因指令不同而不同，按序排列并用“，”分开。“；”之后是注释部分，不影响指令操作。</p>
+<h3 id="有效地址ea">有效地址EA</h3>
+<p>指令中的操作数有三个可能存放位置<br>
+①操作数包含在指令中，即指令的操作数部分就是操作数本身，这种操作数叫做立即数，对应的寻址方式称为立即寻址。</p>
+<p>②操作数存放在CPU的某个内部寄存器中，称为寄存器操作数，这时指令的操作数部分是CPU内部寄存器的编码，对应寻址方式称为寄存器寻址。</p>
+<p>③操作数在内存的数据区中，称为存储器操作数，这时指令的操作数部分给出操作数的存储地址，指令执行时需要根据该地址找到需要的操作数，这种寻址方式称为存储器寻址。<br>
+组成有效地址EA的基本部分可以包括：基址寄存器内容；变址寄存器内容；位移量；比例因子。</p>
+<center>EA=（基址寄存器）+（变址寄存器x比例因子）+位移量</center>
+<p>基址寄存器：BX，BP<br>
+变址寄存器：SI，DI<br>
+比例因子：1<br>
+位移量：0，8，16（位）</p>
+<h3 id="各种寻址方式">各种寻址方式</h3>
+<p>Ⅰ立即寻址<br>
+立即寻址方式下，操作数作为立即数包含在指令中，它紧跟在操作码之后与其一起存放在代码段区域。<br>
+Ⅱ寄存器寻址<br>
+寄存器寻址方式的操作数存放在指令规定的8位、16位CPU内部寄存器中。<br>
+这是CPU内部操作，不需要使用访问总线周期，所以指令的执行速度较快。<br>
+Ⅲ存储器寻址方式<br>
+存储器寻址时，操作数是在存储区中，指令的操作数部分指出此操作数的有效地址EA，而段地址在默认的或段超越前缀指定的段寄存器中。根据EA的不同组合方式，存储器寻址方式又可以分为以下：</p>
+<p>①直接寻址：直接寻址是一种最简单的存储器寻址方式。在这种寻址方式下，指令中操作数部分直接给出操作数的有效地址EA，与操作码一起放在代码段中。操作数一般在数据段DS中。如果要对除DS段之外的其他段中的数据寻址，应在指令中增加段超越前缀指出段寄存器名。<br>
+例如：<br>
+mov  AX，[2000H]；将DS段中2000H和2001H单元内容送入AL和AH<br>
+mov AX，ES：[2000H]；将ES段中2000H和2001H单元内容送入AL和AH</p>
+<p>②寄存器间接寻址：操作数在存储区内，操作数的有效地址EA在指令指定的寄存器中，即EA=（寄存器）<br>
+以SI、DI、BX间接寻址，则默认操作数在数据段中<br>
+mov  AX，[SI]；默认DS为段地址<br>
+以BP间接寻址，则默认操作数在堆栈段中<br>
+mov  AX，[BP]；默认为SS为段地址<br>
+若操作数不在上述规定的默认段则必须在指令的相应操作数前加上段超越前缀。<br>
+mov  CX，DS：[BP]；DS是该指令的段超越前缀<br>
+直接寻址中有效地址EA来自指令自身，相当于一个常量。寄存器间接寻址中有效地址EA来自寄存器，寄存器的内容由前面的指令确定，相当于一个变量。</p>
+<p>③基址寻址：这种寻址方式下，操作数的有效地址EA=（基址寄存器）+位移量，式中位移量在指令中给出并与操作码一起存放在代码段中。<br>
+BP和BX作为基址寄存器。默认情况下，BX以DS作为段寄存器，BP以SS作为段寄存器，可以段超越，位移量是8位或16位。</p>
+<p>④变址寻址：变址寻址方式下，有效地址EA=（变址寄存器）+位移量，它的指令格式及寻址过程与基址寻址相同，区别仅在于将基址寄存器改成变址寄存器。<br>
+SI和DI作为变址寄存器，且默认DS作为段寄存器。基址或变址寻址非常适于对一维数组元素进行检索操作，常用为ui连表示数组起始地址，基址或变址寄存器表示数组元素的可变下标。</p>
+<p>⑤比例变址寻址：这种寻址方式只适合32位寻址的情况。（了解）</p>
+<p>⑥基址加变址寻址：这种寻址方式中，操作数的有效地址EA=（基址寄存器）+（变址寄存器）。<br>
+基址、变址寄存器的使用规定和段寄存器的默认规定与前面所述相同，但要注意当一种寻址方式中的基址、变址寄存器默认的段寄存器不同时，一般由基址寄存器来决定默认哪一个段寄存器作短地址。若在指令中规定了段超越则可用其他段寄存器作为短地址。例如：<br>
+mov  AX，[BX+SI]；或写成mov  AX，[BX][SI]，BX决定默认DS为段寄存器<br>
+基址加变址寻址适合检索二维数组元素和双重循环等操作。<br>
+⑦基址加比例变址寻址：这种寻址方式只适合32位寻址情况。（了解 ）</p>
+<p>⑧带位移量的基址加变址寻址：这种寻址方式下，有效地址EA=（基址寄存器）+（变址寄存器）+位移量。<br>
+基址、变址寄存器的使用规定和对段寄存器的默认规定与前面所述相同。例如：<br>
+mov  AX，[BX+SI+MASK]；或写成mov  AX，MASK[BX][SI]<br>
+带位移量的基址加变址寻址也适用于对二维数组操作，位移量即为数组起始地址。</p>
+<p>⑨带位移量的基址加比例变址寻址：这种寻址适用于32位寻址情况。（了解）</p>
+<h3 id="存储器寻址时的段约定">存储器寻址时的段约定</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">访问存储器类型</th>
+<th style="text-align:center">默认段寄存器</th>
+<th style="text-align:center">允许超越的段寄存器</th>
+<th style="text-align:center">偏移地址寄存器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">取指令</td>
+<td style="text-align:center">CS</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">IP</td>
+</tr>
+<tr>
+<td style="text-align:center">堆栈操作</td>
+<td style="text-align:center">SS</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">SP</td>
+</tr>
+<tr>
+<td style="text-align:center">源串数据访问</td>
+<td style="text-align:center">DS</td>
+<td style="text-align:center">CS、ES、SS</td>
+<td style="text-align:center">SI</td>
+</tr>
+<tr>
+<td style="text-align:center">目的串数据访问</td>
+<td style="text-align:center">ES</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">DI</td>
+</tr>
+<tr>
+<td style="text-align:center">通用数据访问</td>
+<td style="text-align:center">DS</td>
+<td style="text-align:center">CS、ES、SS</td>
+<td style="text-align:center">偏移地址EA</td>
+</tr>
+<tr>
+<td style="text-align:center">以BP、SP间接寻址指令</td>
+<td style="text-align:center">SS</td>
+<td style="text-align:center">CS、DS、ES</td>
+<td style="text-align:center">偏移地址EA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cpu指令系统">CPU指令系统</h3>
+<p>指令操作数符号说明</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">OPRD，OPRDN</td>
+<td style="text-align:center">操作数；第N个操作数，如OPRD1，OPRD2</td>
+</tr>
+<tr>
+<td style="text-align:center">DEST，SRC</td>
+<td style="text-align:center">目的操作数，源操作数</td>
+</tr>
+<tr>
+<td style="text-align:center">reg</td>
+<td style="text-align:center">通用寄存器，长度可以是8位或16位</td>
+</tr>
+<tr>
+<td style="text-align:center">reg8</td>
+<td style="text-align:center">8位通用寄存器AH/AL/BH/BL/CH/CL/DH/DL</td>
+</tr>
+<tr>
+<td style="text-align:center">reg16</td>
+<td style="text-align:center">16位通用寄存器AX/BX/CX/DX/SI/DI/BP/SP</td>
+</tr>
+<tr>
+<td style="text-align:center">Sreg</td>
+<td style="text-align:center">段寄存器DS/CS/SS/ES</td>
+</tr>
+<tr>
+<td style="text-align:center">mem</td>
+<td style="text-align:center">存储器操作数，长度可以是8位或16位</td>
+</tr>
+<tr>
+<td style="text-align:center">imm</td>
+<td style="text-align:center">立即数，长度可以是8位或16位</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据传送类指令">数据传送类指令</h3>
+<p>Ⅰ通用数据传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字节或字传送</td>
+<td>mov 目标，源</td>
+</tr>
+<tr>
+<td>字压入堆栈</td>
+<td>push 源</td>
+</tr>
+<tr>
+<td>字弹出堆栈</td>
+<td>pop 目标</td>
+</tr>
+<tr>
+<td>字节或字交换</td>
+<td>xchg 目标，源</td>
+</tr>
+<tr>
+<td>字节翻译</td>
+<td>xlat</td>
+</tr>
+</tbody>
+</table>
+<p>①mov指令<br>
+指令格式：mov OPRD1，OPRD2<br>
+功能：将源操作数传送给目标操作数，即OPRD2-&gt;OPRD1，源操作数保持不变。<br>
+注意：OPRD1和OPRD2的长度一致；立即数和段寄存器CS不能作为目标操作数；立即数不能直接传送到段寄存器；不允许在两个存储单元之间或在两个段寄存器之间直接传送数据；将立即数传送到存储单元时，必须显式说明存储器操作数的宽度类型。</p>
+<p>②堆栈操作指令push/pop<br>
+指令格式：push OPERD2；pop OPRD1<br>
+功能：push指令使SP-2-&gt;SP，然后将16位源操作数压入堆栈。入栈时高字节存放在高地址，源操作数可以是通用寄存器、段寄存器和存储器。<br>
+pop指令使SP+2-&gt;SP，弹出时低地址字节送低字节，使SP指向新的栈顶，目标操作数可以是通用寄存器、段寄存器（CS除外）或存储器。</p>
+<p>③交换指令xchg<br>
+指令格式：xchg OPRD1，OPRD2<br>
+功能：将长度相同的源操作数与目标操作数进行交换。<br>
+注意：段寄存器和立即数不能作为操作数；不能在两个存储单元之间之间交换数据。</p>
+<p>④查表转换指令xlat（或称换码指令）<br>
+指令格式：xlat或xlat OPRD<br>
+功能：完成1字节的查表转换。它将数据段中偏移地址位（BX+AL）的存储单元的内容送入AL寄存器，即DS：[BX+AL]-&gt;AL。<br>
+xlat指令对于一些无规律的代码转换特别方便，使用时在数据段建立一个长度小于256字节的表格，表的首地址置于BX中AL中存放查找对象在表中的下标，指令执行后，所查找的对象存于AL中，BX内容保持不变。</p>
+<p>Ⅱ地址传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>装入有效地址</td>
+<td>lea 目标，源</td>
+</tr>
+<tr>
+<td>装入逻辑地址</td>
+<td>lds 目标，源</td>
+</tr>
+<tr>
+<td>装入逻辑地址</td>
+<td>les 目标，源</td>
+</tr>
+</tbody>
+</table>
+<p>①有效地址传送指令lea<br>
+指令格式：lea OPRD1，OPRD2<br>
+功能：将源操作数在当前段内的有效地址（即偏移地址）传送至目标操作数。<br>
+注意：这条指令同mov指令的区别是，mov指令传送操作数的内容，而lea传送的是操作数的存储地址。</p>
+<p>②地址指针传送指令lds和les<br>
+指令格式：lds/les OPRD1，OPRD2<br>
+功能：这两条指令的功能类似，都是将源操作数偏移地址的双字存储单元中的第一个字的内容送入指定的16位通用寄存器，第二个字的内容传送给段寄存器DS或ES。</p>
+<p>Ⅲ标志位传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>将标志寄存器FR低字节装入AH</td>
+<td>lahf</td>
+</tr>
+<tr>
+<td>将AH内容装入FR低字节</td>
+<td>sahf</td>
+</tr>
+<tr>
+<td>将FR内容压入堆栈</td>
+<td>pushf</td>
+</tr>
+<tr>
+<td>从堆栈弹出FR内容</td>
+<td>popf</td>
+</tr>
+</tbody>
+</table>
+<p>①标志寄存器读/写指令lahf/sahf<br>
+功能：lahf用于用于将标志寄存器的低字节（含SF、ZF、AF、PF、CF）读出后送给AH寄存器，本条指令本身不影响标志位。sahf与lahf的操作相反。</p>
+<p>②标志寄存器入栈/出栈指令pushf/popf<br>
+pushf指令的执行过程同push指令，只是将标志寄存器FR的内容压入堆栈，popf则是将当前栈顶的一个字传送给标志寄存器FR，同时修改栈顶指针SP。</p>
+<p>ⅣI/O数据传送</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入字节或字</td>
+<td>in 累加器，端口</td>
+</tr>
+<tr>
+<td>输出字节或字</td>
+<td>out 端口，累加器</td>
+</tr>
+</tbody>
+</table>
+<p>输入/输出数据传送指令in/out<br>
+指令格式：in OPRD1，OPRD2<br>
+功能：这组指令专门用于在AL或AX寄存器与I/O端口之间传送数据。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[[微机]第二章8086微处理器]]></title>
         <id>https://zbigboom.github.io/post/4/</id>
         <link href="https://zbigboom.github.io/post/4/">
         </link>
         <updated>2020-12-02T13:20:07.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="8086cpu基本结构">8086CPU基本结构</h3>
-<p>8086由两个独立的处理部件组成：执行部件EU和总线接口部件BIU。<br>
-①执行机构EU：包括8个16位寄存器（通用寄存器AX、BX、CX、DX；指针寄存器SP、BP；变址寄存器SI、DI）算数逻辑部件ALU、标志寄存器FR、暂存寄存器和EU控制系统。<br>
-②总线接口部件BIU：由4个段寄存器（CS、SS、DS、ES）指令指针IP、内部通信寄存器、指令队列、总线控制逻辑和地址加法器组成。</p>
-<h3 id="特点">特点</h3>
-<p>①取指令与执行指令重叠并行（指令流水线）。<br>
-②段寄存器和储存器分段：8086有四个段寄存器，代码段寄存器CS、数据段寄存器DS、堆栈段寄存器SS、附加数据段寄存器ES。<br>
-每个段的物理长度是64K。<br>
-基于存储器的分段结构，在涉及储存器的地址时，必须分清是物理地址还是逻辑地址。CPU访问存储器时地址总线送出的是物理地址，编写程序时则采用逻辑地址，逻辑地址由短地址和偏移量组成。<br>
-物理地址计算公式：</p>
-<center>物理地址=段地址*16+偏移量</center>
-]]></summary>
         <content type="html"><![CDATA[<h3 id="8086cpu基本结构">8086CPU基本结构</h3>
 <p>8086由两个独立的处理部件组成：执行部件EU和总线接口部件BIU。<br>
 ①执行机构EU：包括8个16位寄存器（通用寄存器AX、BX、CX、DX；指针寄存器SP、BP；变址寄存器SI、DI）算数逻辑部件ALU、标志寄存器FR、暂存寄存器和EU控制系统。<br>
@@ -39,7 +309,6 @@
 基于存储器的分段结构，在涉及储存器的地址时，必须分清是物理地址还是逻辑地址。CPU访问存储器时地址总线送出的是物理地址，编写程序时则采用逻辑地址，逻辑地址由短地址和偏移量组成。<br>
 物理地址计算公式：</p>
 <center>物理地址=段地址*16+偏移量</center>
-<!-- more -->
 <h3 id="寄存器配置">寄存器配置</h3>
 <p>Ⅰ通用寄存器：8086有8个16位通用寄存器，8个通用寄存器分两组。<br>
 第一组：AX、BX、CX、DX，他们又可以分成两个8位寄存器，当处理字节指令时，用8位寄存器，处理字指令时，用16位寄存器。<br>
@@ -49,7 +318,6 @@
 Ⅱ段寄存器：见特点中段寄存器。<br>
 Ⅲ指令指针IP：指令指针是一个16位寄存器，功能与程序计数器PC类似。IP总是包含下一条指令在当前代码段的偏移量（人话：IP在这个代码段内保存与下一条指令的偏移量）。</p>
 <center>下一条指令的物理地址=CS*16+IP或CS*10H+IP</center>
-<!-- more -->
 <p>Ⅳ状态标志寄存器FR：FR标志寄存器是16位寄存器，但只使用其中9位。<br>
 ①CF进位标志：当进行加减运算时，若最高位产生进位或借位时CF=1。<br>
 ②PF奇偶标志：若运算结果低八位中含有1的个数为偶数时PF=1，此标志一般用来检测数据传输中是否发生错误。<br>
