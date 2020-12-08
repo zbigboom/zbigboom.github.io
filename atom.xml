@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zbigboom.github.io</id>
     <title>ZBigBoom</title>
-    <updated>2020-12-08T18:00:25.455Z</updated>
+    <updated>2020-12-08T18:09:15.260Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zbigboom.github.io"/>
     <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://zbigboom.github.io/images/avatar.png</logo>
     <icon>https://zbigboom.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZBigBoom</rights>
+    <entry>
+        <title type="html"><![CDATA[[NNDL]经典网络模型]]></title>
+        <id>https://zbigboom.github.io/post/6/</id>
+        <link href="https://zbigboom.github.io/post/6/">
+        </link>
+        <updated>2020-12-08T18:02:55.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="卷积神经网络学习包括alexnet-googlenet-resnet-vggnet代码部分保存在github中">卷积神经网络学习，包括AlexNet、GoogLeNet、ResNet、VGGNet，代码部分保存在GitHub中。</h3>
+<h3 id="alexnet">AlexNet：</h3>
+<p>第一个现代深度卷积网络模型，采用了Relu作为非线性激活函数，使用Dropout防止过拟合，包含五个卷积层三个汇聚层三个全连接层，AlexNet在前两个汇聚层之后进行了局部响应归一化增强模型的泛化能力。因为网络规模超出了当时GPU内存限制所以将网络拆成两半放在两个GPU上，但是现在可以将两个被拆开部分合并，第一个卷积层是两个11x11x3x48的卷积核现在可以使用一个11x11x3x96的卷积核进行运算，在环境搭建时，用tensorflow实现时可以使用安装tensorflow的GPU版本或者CPU版本，用Pytorch实现是可以使用cuda将数据送入GPU进行运算。</p>
+<h3 id="googlenet">GoogLeNet：</h3>
+<p>在GoogLeNet中一个卷积层包含多个大小不同的卷积操作，称为Inception模块，网络是由多个模块和少量汇聚层堆叠而成的，Inception有很多版本，v1中使用了1x1，3x3，5x5，的卷积和3x3的最大汇聚，为了提高效率减少参数数量，在3x3，5x5卷积之前和3x3最大汇聚之后进行1x1的卷积减少特征映射的深度，如果输入特征映射之间存在冗余信息，1x1卷积相当于是先进行一次特征抽取。在Inception多个版本中比较由代表性的是v3网络，使用多层小卷积核来替换大的卷积核减少计算量和参数量，保持感受野不变，①使用两层3x3卷积替代5x5卷积②连续使用kx1，1xk来替换kxk卷积，v3也引入了标签平滑及批量归一化等优化方法。</p>
+<h3 id="resnet">ResNet：</h3>
+<p>残差网络通过给非线性的卷积层增加直连边的方式来提高信息的传播效率，在深度网络中我们期望一个非线性单元去逼近目标函数，如果将目标函数拆成两个部分恒等函数和残差函数，根据通用近似定理，一个由神经网络构成的非线性单元有足够能力来近似逼近原始目标函数或残差函数，实际中后者更容易学习，因此原来的优化问题转换成让非线性单元，去近似残差函数。在神经网络发展中发现，网络的层数越深越由可能获得更好的泛化能力，但是当模型加深之后网络变得难以训练，主要是因为梯度弥撒现象造成的，在较深层的神经网络中梯度信息由网络的末层逐层传向首层时，会出现梯度趋近于0的现象，网络越深，梯度弥散现象可能会越严重。典型的残差单元由多个级联的卷积层和一个跨层的直连边组成再经过Relu激活后输出。</p>
+<h3 id="vgg-16">VGG-16：</h3>
+<p>VGG-16相比AlexNet的改进是使用连续的3x3卷积核代替较大的卷积，对于给定的感受野采用堆积的小卷积核是优于使用大卷积核，因为多层非线性层可以增加网络深度来保证学习更复杂的模式，而且参数更少。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[微机]第三章指令系统]]></title>
         <id>https://zbigboom.github.io/post/5/</id>
