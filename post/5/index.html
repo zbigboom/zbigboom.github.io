@@ -490,6 +490,194 @@ cbw将AL中的字节符号数的符号扩展到AH；cwd将AX中的子符号数�
 功能：用于将AL中两个压缩BCD数相加/减的结果进行校正，以得到正确的压缩BCD和/差。程序中它们紧跟在add/sub指令之后。</p>
 <p>③非压缩BCD数乘/除法调整指令aam/aad<br>
 功能：aam紧跟在mul指令之后，将AX中两个1位非压缩BCD数相乘的结果进行调整；aad在两个非压缩BCD数的除法运算之前，先调整AL和AH中的内容，再用div指令相除。</p>
+<h3 id="逻辑运算与移位指令">逻辑运算与移位指令</h3>
+<p>Ⅰ逻辑运算指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>非（字/字节）</td>
+<td>not 目标</td>
+</tr>
+<tr>
+<td>与（字/字节）</td>
+<td>and 目标，源</td>
+</tr>
+<tr>
+<td>或（字/字节）</td>
+<td>or 目标，源</td>
+</tr>
+<tr>
+<td>异或（字/字节）</td>
+<td>xor 目标，源</td>
+</tr>
+<tr>
+<td>测试（字/字节）</td>
+<td>test 目标，源</td>
+</tr>
+</tbody>
+</table>
+<p>①逻辑非指令not<br>
+指令格式：not OPRD<br>
+功能：将操作数“按位取反”然后送回原处。</p>
+<p>②逻辑与/或/异或指令and/ior/xor<br>
+指令格式：and/or/xor OPRD1，OPRD2<br>
+功能：and，or，xor指令执行按位逻辑“与”、“或”、“异或”操作，它们均为双操作数指令，两个操作数宽度必须相等，执行结果存入OPRD1中。<br>
+and指令用于某些位要清零，其余位保持不变（要清零的位和0相与结果为0）<br>
+or指令用于对某些位置1，其余位保持不变（要置1的位和1相或结果为1）<br>
+xor指令用于某些位取反，其余位保持不变（要取反的位和1相异或结果取反）</p>
+<p>③测试指令test<br>
+指令格式：test OPRD1，OPRD2<br>
+若希望在不改变原有操作数的情况下来检测操作数的某一位或某几位是1还是0，可以使用test指令test指令功能与and指令相同，但操作结果不送回目标操作数，只根据结果设置标志位，这条指令后一般都是条件转移指令，利用测试结果转向不同的程序段。</p>
+<h3 id="移位和循环移位指令">移位和循环移位指令</h3>
+<p>Ⅰ移位指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逻辑左移</td>
+<td>shl 目标，计算值</td>
+</tr>
+<tr>
+<td>算术左移</td>
+<td>sal 目标，计数值</td>
+</tr>
+<tr>
+<td>逻辑右移</td>
+<td>shr 目标，计数值</td>
+</tr>
+<tr>
+<td>算术右移</td>
+<td>sar 目标，计数值</td>
+</tr>
+</tbody>
+</table>
+<p>左移是每移位一次操作数按位依次左移1位，最高位进入CF，右端补零；右移是逻辑右移按位依次右移最高位补零，最低位移到CF。计算右移是按位依次右移，最低位到CF，CF到最高位。<br>
+移位指令是将字节或字某些位分离，或左移表示对二进制数进行2的幂次方运算，右移表示对二进制数除以2的次方。</p>
+<p>Ⅱ循环移位指令</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>循环左移</td>
+<td>rol 目标，计数值</td>
+</tr>
+<tr>
+<td>循环右移</td>
+<td>ror 目标，计数值</td>
+</tr>
+<tr>
+<td>带进位循环左移</td>
+<td>rcl 目标，计数值</td>
+</tr>
+<tr>
+<td>带进位循环右移</td>
+<td>rcr 目标，计数值</td>
+</tr>
+</tbody>
+</table>
+<p>循环移位指令有带进位和不带进位两种，带进位的循环吧CF标志作为操作数的扩展参与循环，不带进位的CF不参与循环，只影响CF，只存放最后一次循环移除的那一位的值。</p>
+<h3 id="控制转移类指令">控制转移类指令</h3>
+<p>Ⅰ无条件转移指令jmp<br>
+指令格式：jmp OPRD<br>
+功能：无条件的转移IP的指向。</p>
+<p>Ⅱ条件转移指令jcc</p>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结果为0转移</td>
+<td>je/jz</td>
+</tr>
+<tr>
+<td>结果不为0转移</td>
+<td>jne/jnz</td>
+</tr>
+<tr>
+<td>有进/借位转移</td>
+<td>jc</td>
+</tr>
+<tr>
+<td>无进/借位转移</td>
+<td>jnc</td>
+</tr>
+<tr>
+<td>溢出转移</td>
+<td>jo</td>
+</tr>
+<tr>
+<td>无溢出转移</td>
+<td>jno</td>
+</tr>
+<tr>
+<td>奇偶性1为偶转移</td>
+<td>jp/jpe</td>
+</tr>
+<tr>
+<td>奇偶性0为奇转移</td>
+<td>jnp/jpo</td>
+</tr>
+<tr>
+<td>符号位为1转移</td>
+<td>js</td>
+</tr>
+<tr>
+<td>符号位为0转移</td>
+<td>jns</td>
+</tr>
+</tbody>
+</table>
+<p>指令格式：jcc OPRD<br>
+根据条件判断进行转移。</p>
+<h3 id="循环控制指令">循环控制指令</h3>
+<table>
+<thead>
+<tr>
+<th>指令功能</th>
+<th>指令书写格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>循环</td>
+<td>loop</td>
+</tr>
+<tr>
+<td>结果为0循环</td>
+<td>loope/loopz</td>
+</tr>
+<tr>
+<td>结果不为0循环</td>
+<td>loopne/loopnz</td>
+</tr>
+<tr>
+<td>CX=0时转移</td>
+<td>jcxz</td>
+</tr>
+</tbody>
+</table>
+<p>指令格式：loop OPRD<br>
+功能：控制程序有规律的循环，他们默认CX为递减计数器来控制循环次数，根据对CX内容的测试结果决定程序时循环至目标地址OPRD还是顺序执行下一条指令。</p>
 
                 </div>
 
