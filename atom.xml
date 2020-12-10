@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zbigboom.github.io</id>
     <title>ZBigBoom</title>
-    <updated>2020-12-09T07:23:59.131Z</updated>
+    <updated>2020-12-10T16:28:30.566Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zbigboom.github.io"/>
     <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
@@ -10,6 +10,36 @@
     <logo>https://zbigboom.github.io/images/avatar.png</logo>
     <icon>https://zbigboom.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ZBigBoom</rights>
+    <entry>
+        <title type="html"><![CDATA[[微机]第四章汇编语言程序设计]]></title>
+        <id>https://zbigboom.github.io/post/8/</id>
+        <link href="https://zbigboom.github.io/post/8/">
+        </link>
+        <updated>2020-12-10T16:27:29.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="程序设计语言概述">程序设计语言概述</h3>
+<p>1机器语言：每种CPU都有自己的指令系统，它根据指令来完成各种操作。指令和数据都是二进制码。<br>
+2高级语言：高级语言是“面向过程”的语言，它采用接近人类习惯的自然语言和数学语言编写程序，不依赖于具体机器。<br>
+3汇编语言：汇编语言是一种采用助记符表示的程序设计语言，是将机器指令符号化了的编程语言。</p>
+<p>汇编语言源程序的框架结构<br>
+1源程序由若干逻辑段组成，各逻辑段都有一个段名，由段定义语句（伪指令语句）来定义和说明。<br>
+2在代码段的起始处，用assume语句（伪指令）说明各个段寄存器与逻辑段的关系，并由用户自己设置各个段寄存器（除代码段CS外）的初值，以建立这些逻辑段的可寻址性。<br>
+3每个逻辑段由若干行汇编语言语句组成，每行只有一条语句且不能超过128个字符，但一条语句允许有后续行，最后均以回车结束。<br>
+4每一条汇编语言语句最多由4个字段组成，它们均按照一定的规则分别写在一条语句的四个区域内，各	区域之间用空格或Tab键隔开。<br>
+5每个源程序在代码段中往往需要含有返回dos操作系统的指令语句，以保证程序执行完毕后能自动回到dos状态。</p>
+<h3 id="语句的种类">语句的种类</h3>
+<p>汇编语言有三种基本语句：指令语句，伪指令语句和宏指令语句。<br>
+1指令语句：对应于CPU指令系统中的一条指令，是可执行语句，出现在程序的代码段中。汇编时汇编程序为之一一对应的机器代码，程序执行时使CPU产生相应功能。<br>
+2伪指令语句：是由伪指令构成的说明语句，可依需要出现在任一段内，汇编时指示汇编程序如何汇编源程序，如分配存储单元、将程序分段等。它本身并不产生机器代码，是CPU不执行的语句。<br>
+3宏指令语句：对一段指令序列进行宏指令定义，则形成宏指令语句。汇编时，凡程序中有宏指令语句的地方都用相应指令序列的机器代码插入。宏指令语句是一般性指令语句的扩展。</p>
+<h3 id="语句的格式">语句的格式</h3>
+<p>指令语句和伪指令语句的格式类似，均有4个部分组成。<br>
+指令语句的一般格式：[标号：][前缀] 指令助记符  [操作数] [；注释]<br>
+伪指令语句的格式：[名字]          伪指令定义符[操作数][；注释]<br>
+[]内为可选部分<br>
+1标号和名字：它们分别是为指令单元和伪指令所起的符号名称，是用户自定义的表识符。指令语句中的标号后面必须有冒号“：”，伪指令语句中的名字后面不能有冒号。<br>
+标号代表指令所在存储单元的符号地址。在程序中，它可以作为转移（jmp）、循环（loop）等指令的转移目标，与具体的指令地址相联系，名字一般用于定义常量、变量、过程、段名等，指示所定义变量、过程以及段的起始地址。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[夜话]...]]></title>
         <id>https://zbigboom.github.io/post/7/</id>
