@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimal-ui" />
+    <title>[Web]爬虫&amp;知乎 | ZBigBoom</title>
+<link rel='stylesheet' id='puma-css'  href='https://zbigboom.github.io/styles/main.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='puma-css'  href='https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css' media='screen' />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://zbigboom.github.io/media/scripts/jquery.js'></script>
+<script type='text/javascript' src='https://zbigboom.github.io/media/scripts/jquery-migrate.min.js'></script>
+        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
+         
+</head>
+<body class="single single-post postid-3788 single-format-standard">
+	<!--加入跟随滑动的顶部-->
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title">
+				<a href="https://zbigboom.github.io" title="ZBigBoom">ZBigBoom</a>
+			</h1>
+		</div>
+
+		<a class="primary-nav-trigger" href="javascript:void(0)">
+			<span class="menu-icon"></span>
+		</a>
+		
+	</header>
+		<div class="site-navigation-wrapper">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<ul class="primary-nav">
+                    
+				<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a title="Home" href="https://zbigboom.github.io">Home</a></li>
+                
+				<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a title="学习笔记" href="https://zbigboom.github.io/tags">学习笔记</a></li>
+                
+				<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a title="文章归档" href="https://zbigboom.github.io/archives">文章归档</a></li>
+                
+	
+			</ul>
+		</nav>			
+	</div>
+	<!--跟随滑动的顶部结束-->
+	<div class="surface-content">    <main class="main-content">
+        <section class="section-body">
+                            <header class="section-header u-textAlignCenter">
+                    <h2 class="grap--h2">[Web]爬虫&amp;知乎</h2>
+                    <div class="block-postMetaWrap">
+                        <time>2021-04-24</time>
+                    </div>
+                </header>
+                <div class="grap">
+					
+					<p>学习了nndl但是遇到一个问题，没有合适的数据集，在做RNN的时候使用的数据集大多是经典的数据集，网络上可以搜索的到，通过一些实例就可以调用使用，甚至tensorflow中有经典数据集下载的工具，但是对于某些特殊的数据集需要自己整理，如果采用人工收集整理的方式效率很低而且工作量会很大。所以想要通过爬虫爬取数据的方式来收集数据，制作数据集。现在想要做的方向是NLP，可以通过收集某些问答网站的评论回答来制作数据集，需要学习的东西有，①爬虫，在学习python时没有系统学习过如何使用爬虫，和爬虫的基本原理及用法，这部分是需要学习的②正则化，爬虫爬取的数据需要正则化表示才能够进行分析③数据库，将爬虫爬取的数据按一定格式和索引进行保存，方便学习是导入调用。</p>
+<!-- more -->
+<p>目前已经完成的是爬虫部分，爬虫使用requests库和lxml库<br>
+以知乎为例，需要先编写headers和url这些在知乎首页登录后按F12可以查看</p>
+<pre><code>headers={
+    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+    'cookie': '_zap=33a43153-9eb5-4589-ad90-a692d6005551; d_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;; _xsrf=6c1c6d60-efaf-4fc3-a237-9ef187b6635a; captcha_session_v2=&quot;2|1:0|10:1618591064|18:captcha_session_v2|88:SHA4bGFXeTE3MW5JUzlsZ0FZNWdEQ1pjZldVYlppRjk0SUhFQzZJRXZ1YzE5SGY1TEhqai9YK3QzeEVIck91Ng==|8522a5a0ef1e5c859248be24ec5a4a8f33f5aa753a56870d8f3046019f095e03&quot;; SESSIONID=fEYhlYimk5rIJ1nvRQTNrS8qdGo1KM8BvucORQzBAfG; JOID=W1sTB0_HeUGdjYrJZspenYmiw-x7qzka9ezZpQmhRjbWx7atFZHDOvCKhc5kmDBG3aoKRtKccU7AY_eLE9eDQes=; osd=U1gTBEvPekGeiYLKZslalYqiwOhzqDkZ8eTapQqlTjXWxLKlFpHAPviJhc1gkDNG3q4CRdKfdUbDY_SPG9SDQu8=; __snaker__id=hPVJ7ljiiG1lEbon; gdxidpyhxdE=e5kQI057%5C3EHzgwk1IoP%2FJkS6m0JVVVUmdVWx4lkJbwV3U3XdrlvsZNw5YiKAiQgtAinpEl4zUSdOJrz%2FSeNkO6S2PrN8szQe1%5ChyB8BlVGaEq3hPX2Q0MN9JGtCTlV0ktH%5C%2FNtS9zSsXhRGRsp6k0rn%2BDMc%5CjjzLMUzkmgzeI6KWOp3%3A1618591982486; _9755xjdesxxd_=32; YD00517437729195%3AWM_NI=3bRp01XZR0uEhNrGTvss7rqJEe%2BtftaOEbJA4f1oeAezE%2BeM7UnekclCFThH5h%2B24oTVyfnb9pkyqaNWM6V0w%2FJo%2BB9u8wIfODaZnklwUWqKm%2BtxV496QKajhWjWq7mKbDk%3D; YD00517437729195%3AWM_NIKE=9ca17ae2e6ffcda170e2e6ee92bc25ed98fb82d97fed968ab7c55f868f9abbb661a6bf8599dc219b94f797c12af0fea7c3b92af1be9e91b33b9c869ed1f84fac92bea8d77eb1adf993f44287bbe595e580a3918b83c94bf8baff90e84ba7a68bcce847f58ba286ea69b09d8ab5eb44f7b8e5d3b765988ab787ed6afbb0a59af46b8e8983d7d53cb5f18690aa4afbabf898cc6e8d9cafbbed61b0a99bb8f441aff5bc99d540fbea9face462ac89a6b8f43daf95aea5ea37e2a3; YD00517437729195%3AWM_TID=zf%2FTyLJxHMdEBVRVVQdrxfeOgY%2FMP4uE; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1618225129,1618233102,1618591082,1618591091; z_c0=&quot;2|1:0|10:1618591107|4:z_c0|92:Mi4xMHIxdkNBQUFBQUFBOE5zc0swUWlFaWNBQUFDRUFsVk5na3FoWUFEU3dNWTFRY2staEwwMWNPOUFTX2d0STY0aDR3|f9a1c3a722b771962977d0cb535ac933961ddf51231b4795abdc9f9c8f5eef31&quot;; tst=r; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1618591136; KLBRSID=0a401b23e8a71b70de2f4b37f5b4e379|1618591507|1618591064'
+}
+url='https://www.zhihu.com/hot'
+</code></pre>
+<p>第二步是get网站,获取网站内容</p>
+<pre><code>    response=requests.get(url,headers=headers)
+</code></pre>
+<p>第三步是将网站内容做成列表,获取需要提取的内容</p>
+<pre><code>    text=response.text
+    html=etree.HTML(text)
+    reslut=html.xpath(&quot;//section[@class='HotItem']&quot;)
+    # 问题id
+    question_list=[]
+    for question in reslut:
+        number=question.xpath(&quot;.//div[@class='HotItem-index']//text()&quot;)[0].strip()
+        title=question.xpath(&quot;.//h2[@class='HotItem-title']/text()&quot;)[0].strip()
+        href=question.xpath(&quot;.//div[@class='HotItem-content']/a/@href&quot;)[0].strip()
+        question_num=href.strip('/')[-1]
+        question_list.append([question_num,title])
+</code></pre>
+<p>可以获得知乎热榜的问题和问题id及问题内容,完整的代码:</p>
+<pre><code>headers={
+    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+    'cookie': '_zap=33a43153-9eb5-4589-ad90-a692d6005551; d_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;; _xsrf=6c1c6d60-efaf-4fc3-a237-9ef187b6635a; captcha_session_v2=&quot;2|1:0|10:1618591064|18:captcha_session_v2|88:SHA4bGFXeTE3MW5JUzlsZ0FZNWdEQ1pjZldVYlppRjk0SUhFQzZJRXZ1YzE5SGY1TEhqai9YK3QzeEVIck91Ng==|8522a5a0ef1e5c859248be24ec5a4a8f33f5aa753a56870d8f3046019f095e03&quot;; SESSIONID=fEYhlYimk5rIJ1nvRQTNrS8qdGo1KM8BvucORQzBAfG; JOID=W1sTB0_HeUGdjYrJZspenYmiw-x7qzka9ezZpQmhRjbWx7atFZHDOvCKhc5kmDBG3aoKRtKccU7AY_eLE9eDQes=; osd=U1gTBEvPekGeiYLKZslalYqiwOhzqDkZ8eTapQqlTjXWxLKlFpHAPviJhc1gkDNG3q4CRdKfdUbDY_SPG9SDQu8=; __snaker__id=hPVJ7ljiiG1lEbon; gdxidpyhxdE=e5kQI057%5C3EHzgwk1IoP%2FJkS6m0JVVVUmdVWx4lkJbwV3U3XdrlvsZNw5YiKAiQgtAinpEl4zUSdOJrz%2FSeNkO6S2PrN8szQe1%5ChyB8BlVGaEq3hPX2Q0MN9JGtCTlV0ktH%5C%2FNtS9zSsXhRGRsp6k0rn%2BDMc%5CjjzLMUzkmgzeI6KWOp3%3A1618591982486; _9755xjdesxxd_=32; YD00517437729195%3AWM_NI=3bRp01XZR0uEhNrGTvss7rqJEe%2BtftaOEbJA4f1oeAezE%2BeM7UnekclCFThH5h%2B24oTVyfnb9pkyqaNWM6V0w%2FJo%2BB9u8wIfODaZnklwUWqKm%2BtxV496QKajhWjWq7mKbDk%3D; YD00517437729195%3AWM_NIKE=9ca17ae2e6ffcda170e2e6ee92bc25ed98fb82d97fed968ab7c55f868f9abbb661a6bf8599dc219b94f797c12af0fea7c3b92af1be9e91b33b9c869ed1f84fac92bea8d77eb1adf993f44287bbe595e580a3918b83c94bf8baff90e84ba7a68bcce847f58ba286ea69b09d8ab5eb44f7b8e5d3b765988ab787ed6afbb0a59af46b8e8983d7d53cb5f18690aa4afbabf898cc6e8d9cafbbed61b0a99bb8f441aff5bc99d540fbea9face462ac89a6b8f43daf95aea5ea37e2a3; YD00517437729195%3AWM_TID=zf%2FTyLJxHMdEBVRVVQdrxfeOgY%2FMP4uE; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1618225129,1618233102,1618591082,1618591091; z_c0=&quot;2|1:0|10:1618591107|4:z_c0|92:Mi4xMHIxdkNBQUFBQUFBOE5zc0swUWlFaWNBQUFDRUFsVk5na3FoWUFEU3dNWTFRY2staEwwMWNPOUFTX2d0STY0aDR3|f9a1c3a722b771962977d0cb535ac933961ddf51231b4795abdc9f9c8f5eef31&quot;; tst=r; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1618591136; KLBRSID=0a401b23e8a71b70de2f4b37f5b4e379|1618591507|1618591064'
+}
+url='https://www.zhihu.com/hot'
+
+def get_question_num(url,headers):
+    response=requests.get(url,headers=headers)
+    text=response.text
+    html=etree.HTML(text)
+    reslut=html.xpath(&quot;//section[@class='HotItem']&quot;)
+    # 问题id
+    question_list=[]
+    for question in reslut:
+        number=question.xpath(&quot;.//div[@class='HotItem-index']//text()&quot;)[0].strip()
+        title=question.xpath(&quot;.//h2[@class='HotItem-title']/text()&quot;)[0].strip()
+        href=question.xpath(&quot;.//div[@class='HotItem-content']/a/@href&quot;)[0].strip()
+        question_num=href.strip('/')[-1]
+        question_list.append([question_num,title])
+    return question_list
+</code></pre>
+<p>现在有了问题id想要获取这个问题的回答,但是遇到了很大的麻烦,因为是第一次编爬虫本来就是新手,还遇到了一个有反爬虫的网站令人头疼,在get问题url时获得404警告,禁止访问,然后查了很多大佬的教程和文章,花了很长时间明白了,知乎的反爬虫破解需要在headers中加入一个x-zse-86+加密文的内容,需要做的是了解知乎的密文是如何加密的,还是在浏览器端查响应和网站代码,Ctrl+f查询x-zse-86的信息,可以查到这段密文有两次加密,第一次是通过问题的url用MD5的方式加密,之后用加密后的32位密文通过知乎自己的加密方式生成新的密文,第一种方式比较容易解决通过MD5加密就行,第二步不能用猜或者很简单的方式进行,所以可以通过之间查网站的代码,扒取相关函数,生成一个js文件(这部分超纲了,完全看不懂)学习到大佬的做法是打断点慢慢调试扒出相关函数,然后写成一个js文件,在进行爬虫的时候可以调用这个js获得加密后的密文<br>
+新的headers应该是</p>
+<pre><code>headers = {
+
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&quot;,
+    &quot;cookie&quot;: 'd_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;;',
+    &quot;x-api-version&quot;: &quot;3.0.91&quot;,
+    &quot;x-zse-83&quot;: &quot;3_2.0&quot;,
+    &quot;x-zse-86&quot;: &quot;1.0_%s&quot; % encrypt_str,
+}
+</code></pre>
+<p>加密的js代码为</p>
+<pre><code>const jsdom = require(&quot;jsdom&quot;);
+const { JSDOM } = jsdom;
+const dom = new JSDOM(`&lt;!DOCTYPE html&gt;&lt;p&gt;Hello world&lt;/p&gt;`);
+window = dom.window;
+document = window.document;
+XMLHttpRequest = window.XMLHttpRequest;
+
+	var exports = {}
+	function t(e) {
+        return (t = &quot;function&quot; == typeof Symbol &amp;&amp; &quot;symbol&quot; == typeof Symbol.A ? function(e) {
+            return typeof e
+        }
+        : function(e) {
+            return e &amp;&amp; &quot;function&quot; == typeof Symbol &amp;&amp; e.constructor === Symbol &amp;&amp; e !== Symbol.prototype ? &quot;symbol&quot; : typeof e
+        }
+        )(e)
+    }
+    Object.defineProperty(exports, &quot;__esModule&quot;, {
+        value: !0
+    });
+    var A = &quot;2.0&quot;
+      , __g = {};
+    function s() {}
+    function i(e) {
+        this.t = (2048 &amp; e) &gt;&gt; 11,
+        this.s = (1536 &amp; e) &gt;&gt; 9,
+        this.i = 511 &amp; e,
+        this.h = 511 &amp; e
+    }
+    function h(e) {
+        this.s = (3072 &amp; e) &gt;&gt; 10,
+        this.h = 1023 &amp; e
+    }
+    function a(e) {
+        this.a = (3072 &amp; e) &gt;&gt; 10,
+        this.c = (768 &amp; e) &gt;&gt; 8,
+        this.n = (192 &amp; e) &gt;&gt; 6,
+        this.t = 63 &amp; e
+    }
+    function c(e) {
+        this.s = e &gt;&gt; 10 &amp; 3,
+        this.i = 1023 &amp; e
+    }
+    function n() {}
+    function e(e) {
+        this.a = (3072 &amp; e) &gt;&gt; 10,
+        this.c = (768 &amp; e) &gt;&gt; 8,
+        this.n = (192 &amp; e) &gt;&gt; 6,
+        this.t = 63 &amp; e
+    }
+    function o(e) {
+        this.h = (4095 &amp; e) &gt;&gt; 2,
+        this.t = 3 &amp; e
+    }
+    function r(e) {
+        this.s = e &gt;&gt; 10 &amp; 3,
+        this.i = e &gt;&gt; 2 &amp; 255,
+        this.t = 3 &amp; e
+    }
+    s.prototype.e = function(e) {
+        e.o = !1
+    }
+    ,
+    i.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.r[this.s] = this.i;
+            break;
+        case 1:
+            e.r[this.s] = e.k[this.h]
+        }
+    }
+    ,
+    h.prototype.e = function(e) {
+        e.k[this.h] = e.r[this.s]
+    }
+    ,
+    a.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.r[this.a] = e.r[this.c] + e.r[this.n];
+            break;
+        case 1:
+            e.r[this.a] = e.r[this.c] - e.r[this.n];
+            break;
+        case 2:
+            e.r[this.a] = e.r[this.c] * e.r[this.n];
+            break;
+        case 3:
+            e.r[this.a] = e.r[this.c] / e.r[this.n];
+            break;
+        case 4:
+            e.r[this.a] = e.r[this.c] % e.r[this.n];
+            break;
+        case 5:
+            e.r[this.a] = e.r[this.c] == e.r[this.n];
+            break;
+        case 6:
+            e.r[this.a] = e.r[this.c] &gt;= e.r[this.n];
+            break;
+        case 7:
+            e.r[this.a] = e.r[this.c] || e.r[this.n];
+            break;
+        case 8:
+            e.r[this.a] = e.r[this.c] &amp;&amp; e.r[this.n];
+            break;
+        case 9:
+            e.r[this.a] = e.r[this.c] !== e.r[this.n];
+            break;
+        case 10:
+            e.r[this.a] = t(e.r[this.c]);
+            break;
+        case 11:
+            e.r[this.a] = e.r[this.c]in e.r[this.n];
+            break;
+        case 12:
+            e.r[this.a] = e.r[this.c] &gt; e.r[this.n];
+            break;
+        case 13:
+            e.r[this.a] = -e.r[this.c];
+            break;
+        case 14:
+            e.r[this.a] = e.r[this.c] &lt; e.r[this.n];
+            break;
+        case 15:
+            e.r[this.a] = e.r[this.c] &amp; e.r[this.n];
+            break;
+        case 16:
+            e.r[this.a] = e.r[this.c] ^ e.r[this.n];
+            break;
+        case 17:
+            e.r[this.a] = e.r[this.c] &lt;&lt; e.r[this.n];
+            break;
+        case 18:
+            e.r[this.a] = e.r[this.c] &gt;&gt;&gt; e.r[this.n];
+            break;
+        case 19:
+            e.r[this.a] = e.r[this.c] | e.r[this.n];
+            break;
+        case 20:
+            e.r[this.a] = !e.r[this.c]
+        }
+    }
+    ,
+    c.prototype.e = function(e) {
+        e.Q.push(e.C),
+        e.B.push(e.k),
+        e.C = e.r[this.s],
+        e.k = [];
+        for (var t = 0; t &lt; this.i; t++)
+            e.k.unshift(e.f.pop());
+        e.g.push(e.f),
+        e.f = []
+    }
+    ,
+    n.prototype.e = function(e) {
+        e.C = e.Q.pop(),
+        e.k = e.B.pop(),
+        e.f = e.g.pop()
+    }
+    ,
+    e.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.u = e.r[this.a] &gt;= e.r[this.c];
+            break;
+        case 1:
+            e.u = e.r[this.a] &lt;= e.r[this.c];
+            break;
+        case 2:
+            e.u = e.r[this.a] &gt; e.r[this.c];
+            break;
+        case 3:
+            e.u = e.r[this.a] &lt; e.r[this.c];
+            break;
+        case 4:
+            e.u = e.r[this.a] == e.r[this.c];
+            break;
+        case 5:
+            e.u = e.r[this.a] != e.r[this.c];
+            break;
+        case 6:
+            e.u = e.r[this.a];
+            break;
+        case 7:
+            e.u = !e.r[this.a]
+        }
+    }
+    ,
+    o.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.C = this.h;
+            break;
+        case 1:
+            e.u &amp;&amp; (e.C = this.h);
+            break;
+        case 2:
+            e.u || (e.C = this.h);
+            break;
+        case 3:
+            e.C = this.h,
+            e.w = null
+        }
+        e.u = !1
+    }
+    ,
+    r.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            for (var t = [], n = 0; n &lt; this.i; n++)
+                t.unshift(e.f.pop());
+            e.r[3] = e.r[this.s](t[0], t[1]);
+            break;
+        case 1:
+            for (var r = e.f.pop(), o = [], i = 0; i &lt; this.i; i++)
+                o.unshift(e.f.pop());
+            e.r[3] = e.r[this.s][r](o[0], o[1]);
+            break;
+        case 2:
+            for (var a = [], c = 0; c &lt; this.i; c++)
+                a.unshift(e.f.pop());
+            e.r[3] = new e.r[this.s](a[0],a[1])
+        }
+    }
+    ;
+    var k = function(e) {
+        for (var t = 66, n = [], r = 0; r &lt; e.length; r++) {
+            var o = 24 ^ e.charCodeAt(r) ^ t;
+            n.push(String.fromCharCode(o)),
+            t = o
+        }
+        return n.join(&quot;&quot;)
+    };
+    function Q(e) {
+        this.t = (4095 &amp; e) &gt;&gt; 10,
+        this.s = (1023 &amp; e) &gt;&gt; 8,
+        this.i = 1023 &amp; e,
+        this.h = 63 &amp; e
+    }
+    function C(e) {
+        this.t = (4095 &amp; e) &gt;&gt; 10,
+        this.a = (1023 &amp; e) &gt;&gt; 8,
+        this.c = (255 &amp; e) &gt;&gt; 6
+    }
+    function B(e) {
+        this.s = (3072 &amp; e) &gt;&gt; 10,
+        this.h = 1023 &amp; e
+    }
+    function f(e) {
+        this.h = 4095 &amp; e
+    }
+    function g(e) {
+        this.s = (3072 &amp; e) &gt;&gt; 10
+    }
+    function u(e) {
+        this.h = 4095 &amp; e
+    }
+    function w(e) {
+        this.t = (3840 &amp; e) &gt;&gt; 8,
+        this.s = (192 &amp; e) &gt;&gt; 6,
+        this.i = 63 &amp; e
+    }
+    function G() {
+        this.r = [0, 0, 0, 0],
+        this.C = 0,
+        this.Q = [],
+        this.k = [],
+        this.B = [],
+        this.f = [],
+        this.g = [],
+        this.u = !1,
+        this.G = [],
+        this.b = [],
+        this.o = !1,
+        this.w = null,
+        this.U = null,
+        this.F = [],
+        this.R = 0,
+        this.J = {
+            0: s,
+            1: i,
+            2: h,
+            3: a,
+            4: c,
+            5: n,
+            6: e,
+            7: o,
+            8: r,
+            9: Q,
+            10: C,
+            11: B,
+            12: f,
+            13: g,
+            14: u,
+            15: w
+        }
+    }
+    Q.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.f.push(e.r[this.s]);
+            break;
+        case 1:
+            e.f.push(this.i);
+            break;
+        case 2:
+            e.f.push(e.k[this.h]);
+            break;
+        case 3:
+            e.f.push(k(e.b[this.h]))
+        }
+    }
+    ,
+    C.prototype.e = function(A) {
+        switch (this.t) {
+        case 0:
+            var t = A.f.pop();
+            A.r[this.a] = A.r[this.c][t];
+            break;
+        case 1:
+            var s = A.f.pop()
+              , i = A.f.pop();
+            A.r[this.c][s] = i;
+            break;
+        case 2:
+            var h = A.f.pop();
+            A.r[this.a] = eval(h)
+        }
+    }
+    ,
+    B.prototype.e = function(e) {
+        e.r[this.s] = k(e.b[this.h])
+    }
+    ,
+    f.prototype.e = function(e) {
+        e.w = this.h
+    }
+    ,
+    g.prototype.e = function(e) {
+        throw e.r[this.s]
+    }
+    ,
+    u.prototype.e = function(e) {
+        var t = this
+          , n = [0];
+        e.k.forEach(function(e) {
+            n.push(e)
+        });
+        var r = function(r) {
+            var o = new G;
+            return o.k = n,
+            o.k[0] = r,
+            o.v(e.G, t.h, e.b, e.F),
+            o.r[3]
+        };
+        r.toString = function() {
+            return &quot;() { [native code] }&quot;
+        }
+        ,
+        e.r[3] = r
+    }
+    ,
+    w.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            for (var t = {}, n = 0; n &lt; this.i; n++) {
+                var r = e.f.pop();
+                t[e.f.pop()] = r
+            }
+            e.r[this.s] = t;
+            break;
+        case 1:
+            for (var o = [], i = 0; i &lt; this.i; i++)
+                o.unshift(e.f.pop());
+            e.r[this.s] = o
+        }
+    }
+    ,
+    G.prototype.D = function(e) {
+        console.log(window.atob(e));
+        for (var t = window.atob(e), n = t.charCodeAt(0) &lt;&lt; 8 | t.charCodeAt(1), r = [], o = 2; o &lt; n + 2; o += 2)
+            r.push(t.charCodeAt(o) &lt;&lt; 8 | t.charCodeAt(o + 1));
+        this.G = r;
+        for (var i = [], a = n + 2; a &lt; t.length; ) {
+            var c = t.charCodeAt(a) &lt;&lt; 8 | t.charCodeAt(a + 1)
+              , s = t.slice(a + 2, a + 2 + c);
+            i.push(s),
+            a += c + 2
+        }
+        this.b = i
+    }
+    ,
+    G.prototype.v = function(e, t, n) {
+        for (t = t || 0,
+        n = n || [],
+        this.C = t,
+        &quot;string&quot; == typeof e ? this.D(e) : (this.G = e,
+        this.b = n),
+        this.o = !0,
+        this.R = Date.now(); this.o; ) {
+            var r = this.G[this.C++];
+            if (&quot;number&quot; != typeof r)
+                break;
+            var o = Date.now();
+            if (500 &lt; o - this.R)
+                return;
+            this.R = o;
+            try {
+                this.e(r)
+            } catch (e) {
+                this.U = e,
+                this.w &amp;&amp; (this.C = this.w)
+            }
+        }
+    }
+    ,
+    G.prototype.e = function(e) {
+        var t = (61440 &amp; e) &gt;&gt; 12;
+        new this.J[t](e).e(this)
+    }
+    ,
+     (new G).v(&quot;AxjgB5MAnACoAJwBpAAAABAAIAKcAqgAMAq0AzRJZAZwUpwCqACQACACGAKcBKAAIAOcBagAIAQYAjAUGgKcBqFAuAc5hTSHZAZwqrAIGgA0QJEAJAAYAzAUGgOcCaFANRQ0R2QGcOKwChoANECRACQAsAuQABgDnAmgAJwMgAGcDYwFEAAzBmAGcSqwDhoANECRACQAGAKcD6AAGgKcEKFANEcYApwRoAAxB2AGcXKwEhoANECRACQAGAKcE6AAGgKcFKFANEdkBnGqsBUaADRAkQAkABgCnBagAGAGcdKwFxoANECRACQAGAKcGKAAYAZx+rAZGgA0QJEAJAAYA5waoABgBnIisBsaADRAkQAkABgCnBygABoCnB2hQDRHZAZyWrAeGgA0QJEAJAAYBJwfoAAwFGAGcoawIBoANECRACQAGAOQALAJkAAYBJwfgAlsBnK+sCEaADRAkQAkABgDkACwGpAAGAScH4AJbAZy9rAiGgA0QJEAJACwI5AAGAScH6AAkACcJKgAnCWgAJwmoACcJ4AFnA2MBRAAMw5gBnNasCgaADRAkQAkABgBEio0R5EAJAGwKSAFGACcKqAAEgM0RCQGGAYSATRFZAZzshgAtCs0QCQAGAYSAjRFZAZz1hgAtCw0QCQAEAAgB7AtIAgYAJwqoAASATRBJAkYCRIANEZkBnYqEAgaBxQBOYAoBxQEOYQ0giQKGAmQABgAnC6ABRgBGgo0UhD/MQ8zECALEAgaBxQBOYAoBxQEOYQ0gpEAJAoYARoKNFIQ/zEPkAAgChgLGgkUATmBkgAaAJwuhAUaCjdQFAg5kTSTJAsQCBoHFAE5gCgHFAQ5hDSCkQAkChgBGgo0UhD/MQ+QACAKGAsaCRQCOYGSABoAnC6EBRoKN1AUEDmRNJMkCxgFGgsUPzmPkgAaCJwvhAU0wCQFGAUaCxQGOZISPzZPkQAaCJwvhAU0wCQFGAUaCxQMOZISPzZPkQAaCJwvhAU0wCQFGAUaCxQSOZISPzZPkQAaCJwvhAU0wCQFGAkSAzRBJAlz/B4FUAAAAwUYIAAIBSITFQkTERwABi0GHxITAAAJLwMSGRsXHxMZAAk0Fw8HFh4NAwUABhU1EBceDwAENBcUEAAGNBkTGRcBAAFKAAkvHg4PKz4aEwIAAUsACDIVHB0QEQ4YAAsuAzs7AAoPKToKDgAHMx8SGQUvMQABSAALORoVGCQgERcCAxoACAU3ABEXAgMaAAsFGDcAERcCAxoUCgABSQAGOA8LGBsPAAYYLwsYGw8AAU4ABD8QHAUAAU8ABSkbCQ4BAAFMAAktCh8eDgMHCw8AAU0ADT4TGjQsGQMaFA0FHhkAFz4TGjQsGQMaFA0FHhk1NBkCHgUbGBEPAAFCABg9GgkjIAEmOgUHDQ8eFSU5DggJAwEcAwUAAUMAAUAAAUEADQEtFw0FBwtdWxQTGSAACBwrAxUPBR4ZAAkqGgUDAwMVEQ0ACC4DJD8eAx8RAAQ5GhUYAAFGAAAABjYRExELBAACWhgAAVoAQAg/PTw0NxcQPCQ5C3JZEBs9fkcnDRcUAXZia0Q4EhQgXHojMBY3MWVCNT0uDhMXcGQ7AUFPHigkQUwQFkhaAkEACjkTEQspNBMZPC0ABjkTEQsrLQ==&quot;);
+     function b(e) {
+         console.log(e);
+         console.log(encodeURIComponent(e));
+        return __g._encrypt(encodeURIComponent(e))
+    };
+</code></pre>
+<p>调用js需要nodejs支持,可以通过官网下载配置全局环境,在全局使用npm install jsdom安装库之后就可以在python中调用js文件<br>
+现在有了问题的url有了headers有了加密方式就可以爬取知乎问题的内容了,爬取后正则化表示和数据库保存就是下一个阶段需要学习努力的方向<br>
+完整代码</p>
+<pre><code>import requests
+import execjs
+import hashlib
+
+
+url = &quot;/api/v4/questions/454944228/answers?include=data%5B%2A%5D.is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_collapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cattachment%2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Cis_labeled%2Cpaid_info%2Cpaid_info_content%2Crelationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_recognized%3Bdata%5B%2A%5D.mark_infos%5B%2A%5D.url%3Bdata%5B%2A%5D.author.follower_count%2Cbadge%5B%2A%5D.topics%3Bdata%5B%2A%5D.settings.table_of_content.enabled&amp;limit=5&amp;offset=5&amp;platform=desktop&amp;sort_by=default&quot;
+
+f = &quot;+&quot;.join([&quot;3_2.0&quot;, url,'&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;'])
+
+fmd5 = hashlib.new('md5', f.encode()).hexdigest()
+
+with open('g_encrypt.js', 'r') as f:
+    ctx1 = execjs.compile(f.read(), cwd=r'C:\Users\MRCHENIKE\node_modules')
+encrypt_str = ctx1.call('b', fmd5)
+
+headers = {
+
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&quot;,
+    &quot;cookie&quot;: 'd_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;;',
+    &quot;x-api-version&quot;: &quot;3.0.91&quot;,
+    &quot;x-zse-83&quot;: &quot;3_2.0&quot;,
+    &quot;x-zse-86&quot;: &quot;1.0_%s&quot; % encrypt_str,
+}
+print(headers)
+r = requests.get(&quot;https://www.zhihu.com&quot; + url, headers=headers)
+
+all_detail_data = r.json()['data']
+length_detail_data = len(all_detail_data)
+txt_1=open(&quot;txt1.txt&quot;,&quot;w&quot;)
+for one_detail_data in all_detail_data:
+
+    answer_author = one_detail_data['author']['name']
+    author_introduce = one_detail_data['author']['headline']
+    author_followers = one_detail_data['author']['follower_count']
+    answer_vote_num = one_detail_data['voteup_count']
+    answer_comment_num = one_detail_data['comment_count']
+    updated_time = one_detail_data['updated_time']
+    content = one_detail_data['content']
+    txt_1.write(content)
+txt_1.close()
+</code></pre>
+
+                </div>
+
+                <div class="post--keywords" itemprop="keywords">
+					 <a href="https://zbigboom.github.io/tag/AoYvTJ5WX/" class="post--keyword" data-title="Web" data-type="post_tag" data-term-id="39">Web</a>           </div>
+
+
+
+                      </section>
+    </main>
+</div>
+	<footer class="site-footer u-textAlignCenter">
+    	<div class="footer-branding">
+            <a href="https://zbigboom.github.io" title="ZBigBoom">ZBigBoom</a>
+									<p class="site-description">ZXL</p>
+			         </div>
+		 <hr />
+		 <div class="social-links">
+		                       
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                           
+                            	
+			<span class="social-link"><a href="https://raw.githubusercontent.com/zbigboom/Picgo/master/QQ.png" target="_blank"><i class="iconfont icon-qq"></i></a></span>	
+			                         
+                           
+                            
+                           
+                            
+                           
+				</div>
+        <div class="footer-copy">
+                Mr. Zhou's private space
+        </div>
+
+    </footer>
+	<div class="back-to-top u-hide" onclick="backToTop();"><i class="iconfont icon-xiangshang"></i></div>
+
+<script type='text/javascript' src='https://zbigboom.github.io/media/scripts/main.js'></script>
+</body>
+</html>

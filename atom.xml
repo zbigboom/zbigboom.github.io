@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zbigboom.github.io</id>
     <title>ZBigBoom</title>
-    <updated>2021-03-24T18:33:24.185Z</updated>
+    <updated>2021-04-24T17:15:11.103Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zbigboom.github.io"/>
     <link rel="self" href="https://zbigboom.github.io/atom.xml"/>
@@ -10,6 +10,563 @@
     <logo>https://zbigboom.github.io/images/avatar.png</logo>
     <icon>https://zbigboom.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, ZBigBoom</rights>
+    <entry>
+        <title type="html"><![CDATA[[夜话]人间观察员]]></title>
+        <id>https://zbigboom.github.io/post/15/</id>
+        <link href="https://zbigboom.github.io/post/15/">
+        </link>
+        <updated>2021-04-24T16:14:02.000Z</updated>
+        <content type="html"><![CDATA[<p>最近看到一个词叫做人间观察员,我的理解是这是我们每个人都在扮演的一个角色只是可能我们没有意识到我们在扮演这样的一个角色,其实停下来走慢点看看身边发生的,很多其实是很有意思的.最近可能因为我看的东西的影响我观察的角度好像偏向了一个话题,叫做&quot;什么是爱&quot;挺奇怪的但是也挺有意思的.<br>
+什么是爱,这个问题有正确答案么?似乎没有,没有一个定理,一个公式,一段具体的描述能将它表述出来,爱存在么似乎都成了一个问题.但是我相信它是存在的,不是以物质或能量的形式,但是存在的,就如同笛卡尔说的&quot;我思故我在&quot;一样,它看不见摸不着但确确实实存在,至少在我的认知中存在.最近看了&lt;&lt;霍乱时期的爱情&gt;&gt;<br>
+讲的是爱情,算是爱的一种形式吧,我认为的书中描述了两种爱情的形式吧,一种是弗尔米纳和乌尔比诺医生之间的,另外一种是弗尔米纳和弗洛伦蒂纳之间的,前者看起来很美好但是弗尔米纳却说&quot;浮华而已&quot;的爱,后者是看起来很悲惨但是&quot;一生一世&quot;,判别不出哪一种是真的爱情,但是可以说爱这个&quot;东西&quot;是存在的,甚至弗洛伦蒂纳用一生去爱着弗尔米纳,爱贯穿了时间.虽然这是一本小说,但描绘的故事是被爱情包裹着的,说明确实有爱的存在,甚至有人想将它描述出来.现在可以说爱是存在的,但爱是什么?<br>
+有些东西得要换个角度看看,最近又看了一遍&lt;&lt;星际穿越&gt;&gt;一部很棒的电影,第一次看的时候让我大开眼界,对世界都有了新的认识,影片里有一些概念,我第一遍看的时候认识到的&quot;四维&quot;&quot;五维&quot;,用维度来描述空间,我们生活的三维的空间,零维是一个点,一维是一条线,二维是一个平面,三维是一个空间,四维是时间,这是一般的认知,第一遍看的时候我认位第五维的存在是引力,以上这些维度可以从两个方向看,低维向高维看去可以看成扩展,点扩展成线这样,但是从高维看,可以是贯穿,线贯穿了点,这样就理解了第五维引力贯穿了前面的低维,不同的引力可以产生不同的低维空间.这是我第一遍看的时候理解到的,但是现在我第二次去看它,又有了新的认知,在这五维之上还有一个很重要的是爱,在我认为或许爱是一种更高的维度,它贯穿了前面的低维,因为在影片中库珀给墨菲传递信息的动机是爱,是一个父亲的爱,他本身就在一个高维的空间,而爱是恒定不变的,爱没有因为高维的改变而改变,也就是爱贯穿了这个高维空间,如果爱能具象化表示出来,它是贯穿低维的一条线.所以爱像是一条纽带一样,看不见摸不着,但是它存在而且能量很强.<br>
+其实以上这些都算是哲学解释什么是爱,但生活中其实也能观察的到,就比如一个人注意力,一个人坐着目视着前方没有任何干扰,他就坐在那里看着前方,但是如果这时候在他右边发生了爆炸,那么他的身体会有反应,身体会向右偏而且目光不再是前方而是右方,也就是他的注意力被右方吸引,这是一种影响,它也是看不见的,但是它存在且有能量,那将这个爆炸换成是这个人爱的东西,比如他爱的人,他爱的东西,他也会向右偏.这可比那种高维能量容易理解得多.<br>
+所以爱是什么?没有标准答案,在我的认知里爱是存在的,是一种纽带而且能量很强,不论是人之间的还是其他的,它都具有很强的能量会影响人,是一种强相互作用,虽然看不见摸不着说不明白,但要相信它.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Web]爬虫&知乎]]></title>
+        <id>https://zbigboom.github.io/post/14/</id>
+        <link href="https://zbigboom.github.io/post/14/">
+        </link>
+        <updated>2021-04-23T18:11:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>学习了nndl但是遇到一个问题，没有合适的数据集，在做RNN的时候使用的数据集大多是经典的数据集，网络上可以搜索的到，通过一些实例就可以调用使用，甚至tensorflow中有经典数据集下载的工具，但是对于某些特殊的数据集需要自己整理，如果采用人工收集整理的方式效率很低而且工作量会很大。所以想要通过爬虫爬取数据的方式来收集数据，制作数据集。现在想要做的方向是NLP，可以通过收集某些问答网站的评论回答来制作数据集，需要学习的东西有，①爬虫，在学习python时没有系统学习过如何使用爬虫，和爬虫的基本原理及用法，这部分是需要学习的②正则化，爬虫爬取的数据需要正则化表示才能够进行分析③数据库，将爬虫爬取的数据按一定格式和索引进行保存，方便学习是导入调用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>学习了nndl但是遇到一个问题，没有合适的数据集，在做RNN的时候使用的数据集大多是经典的数据集，网络上可以搜索的到，通过一些实例就可以调用使用，甚至tensorflow中有经典数据集下载的工具，但是对于某些特殊的数据集需要自己整理，如果采用人工收集整理的方式效率很低而且工作量会很大。所以想要通过爬虫爬取数据的方式来收集数据，制作数据集。现在想要做的方向是NLP，可以通过收集某些问答网站的评论回答来制作数据集，需要学习的东西有，①爬虫，在学习python时没有系统学习过如何使用爬虫，和爬虫的基本原理及用法，这部分是需要学习的②正则化，爬虫爬取的数据需要正则化表示才能够进行分析③数据库，将爬虫爬取的数据按一定格式和索引进行保存，方便学习是导入调用。</p>
+<!-- more -->
+<p>目前已经完成的是爬虫部分，爬虫使用requests库和lxml库<br>
+以知乎为例，需要先编写headers和url这些在知乎首页登录后按F12可以查看</p>
+<pre><code>headers={
+    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+    'cookie': '_zap=33a43153-9eb5-4589-ad90-a692d6005551; d_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;; _xsrf=6c1c6d60-efaf-4fc3-a237-9ef187b6635a; captcha_session_v2=&quot;2|1:0|10:1618591064|18:captcha_session_v2|88:SHA4bGFXeTE3MW5JUzlsZ0FZNWdEQ1pjZldVYlppRjk0SUhFQzZJRXZ1YzE5SGY1TEhqai9YK3QzeEVIck91Ng==|8522a5a0ef1e5c859248be24ec5a4a8f33f5aa753a56870d8f3046019f095e03&quot;; SESSIONID=fEYhlYimk5rIJ1nvRQTNrS8qdGo1KM8BvucORQzBAfG; JOID=W1sTB0_HeUGdjYrJZspenYmiw-x7qzka9ezZpQmhRjbWx7atFZHDOvCKhc5kmDBG3aoKRtKccU7AY_eLE9eDQes=; osd=U1gTBEvPekGeiYLKZslalYqiwOhzqDkZ8eTapQqlTjXWxLKlFpHAPviJhc1gkDNG3q4CRdKfdUbDY_SPG9SDQu8=; __snaker__id=hPVJ7ljiiG1lEbon; gdxidpyhxdE=e5kQI057%5C3EHzgwk1IoP%2FJkS6m0JVVVUmdVWx4lkJbwV3U3XdrlvsZNw5YiKAiQgtAinpEl4zUSdOJrz%2FSeNkO6S2PrN8szQe1%5ChyB8BlVGaEq3hPX2Q0MN9JGtCTlV0ktH%5C%2FNtS9zSsXhRGRsp6k0rn%2BDMc%5CjjzLMUzkmgzeI6KWOp3%3A1618591982486; _9755xjdesxxd_=32; YD00517437729195%3AWM_NI=3bRp01XZR0uEhNrGTvss7rqJEe%2BtftaOEbJA4f1oeAezE%2BeM7UnekclCFThH5h%2B24oTVyfnb9pkyqaNWM6V0w%2FJo%2BB9u8wIfODaZnklwUWqKm%2BtxV496QKajhWjWq7mKbDk%3D; YD00517437729195%3AWM_NIKE=9ca17ae2e6ffcda170e2e6ee92bc25ed98fb82d97fed968ab7c55f868f9abbb661a6bf8599dc219b94f797c12af0fea7c3b92af1be9e91b33b9c869ed1f84fac92bea8d77eb1adf993f44287bbe595e580a3918b83c94bf8baff90e84ba7a68bcce847f58ba286ea69b09d8ab5eb44f7b8e5d3b765988ab787ed6afbb0a59af46b8e8983d7d53cb5f18690aa4afbabf898cc6e8d9cafbbed61b0a99bb8f441aff5bc99d540fbea9face462ac89a6b8f43daf95aea5ea37e2a3; YD00517437729195%3AWM_TID=zf%2FTyLJxHMdEBVRVVQdrxfeOgY%2FMP4uE; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1618225129,1618233102,1618591082,1618591091; z_c0=&quot;2|1:0|10:1618591107|4:z_c0|92:Mi4xMHIxdkNBQUFBQUFBOE5zc0swUWlFaWNBQUFDRUFsVk5na3FoWUFEU3dNWTFRY2staEwwMWNPOUFTX2d0STY0aDR3|f9a1c3a722b771962977d0cb535ac933961ddf51231b4795abdc9f9c8f5eef31&quot;; tst=r; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1618591136; KLBRSID=0a401b23e8a71b70de2f4b37f5b4e379|1618591507|1618591064'
+}
+url='https://www.zhihu.com/hot'
+</code></pre>
+<p>第二步是get网站,获取网站内容</p>
+<pre><code>    response=requests.get(url,headers=headers)
+</code></pre>
+<p>第三步是将网站内容做成列表,获取需要提取的内容</p>
+<pre><code>    text=response.text
+    html=etree.HTML(text)
+    reslut=html.xpath(&quot;//section[@class='HotItem']&quot;)
+    # 问题id
+    question_list=[]
+    for question in reslut:
+        number=question.xpath(&quot;.//div[@class='HotItem-index']//text()&quot;)[0].strip()
+        title=question.xpath(&quot;.//h2[@class='HotItem-title']/text()&quot;)[0].strip()
+        href=question.xpath(&quot;.//div[@class='HotItem-content']/a/@href&quot;)[0].strip()
+        question_num=href.strip('/')[-1]
+        question_list.append([question_num,title])
+</code></pre>
+<p>可以获得知乎热榜的问题和问题id及问题内容,完整的代码:</p>
+<pre><code>headers={
+    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
+    'cookie': '_zap=33a43153-9eb5-4589-ad90-a692d6005551; d_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;; _xsrf=6c1c6d60-efaf-4fc3-a237-9ef187b6635a; captcha_session_v2=&quot;2|1:0|10:1618591064|18:captcha_session_v2|88:SHA4bGFXeTE3MW5JUzlsZ0FZNWdEQ1pjZldVYlppRjk0SUhFQzZJRXZ1YzE5SGY1TEhqai9YK3QzeEVIck91Ng==|8522a5a0ef1e5c859248be24ec5a4a8f33f5aa753a56870d8f3046019f095e03&quot;; SESSIONID=fEYhlYimk5rIJ1nvRQTNrS8qdGo1KM8BvucORQzBAfG; JOID=W1sTB0_HeUGdjYrJZspenYmiw-x7qzka9ezZpQmhRjbWx7atFZHDOvCKhc5kmDBG3aoKRtKccU7AY_eLE9eDQes=; osd=U1gTBEvPekGeiYLKZslalYqiwOhzqDkZ8eTapQqlTjXWxLKlFpHAPviJhc1gkDNG3q4CRdKfdUbDY_SPG9SDQu8=; __snaker__id=hPVJ7ljiiG1lEbon; gdxidpyhxdE=e5kQI057%5C3EHzgwk1IoP%2FJkS6m0JVVVUmdVWx4lkJbwV3U3XdrlvsZNw5YiKAiQgtAinpEl4zUSdOJrz%2FSeNkO6S2PrN8szQe1%5ChyB8BlVGaEq3hPX2Q0MN9JGtCTlV0ktH%5C%2FNtS9zSsXhRGRsp6k0rn%2BDMc%5CjjzLMUzkmgzeI6KWOp3%3A1618591982486; _9755xjdesxxd_=32; YD00517437729195%3AWM_NI=3bRp01XZR0uEhNrGTvss7rqJEe%2BtftaOEbJA4f1oeAezE%2BeM7UnekclCFThH5h%2B24oTVyfnb9pkyqaNWM6V0w%2FJo%2BB9u8wIfODaZnklwUWqKm%2BtxV496QKajhWjWq7mKbDk%3D; YD00517437729195%3AWM_NIKE=9ca17ae2e6ffcda170e2e6ee92bc25ed98fb82d97fed968ab7c55f868f9abbb661a6bf8599dc219b94f797c12af0fea7c3b92af1be9e91b33b9c869ed1f84fac92bea8d77eb1adf993f44287bbe595e580a3918b83c94bf8baff90e84ba7a68bcce847f58ba286ea69b09d8ab5eb44f7b8e5d3b765988ab787ed6afbb0a59af46b8e8983d7d53cb5f18690aa4afbabf898cc6e8d9cafbbed61b0a99bb8f441aff5bc99d540fbea9face462ac89a6b8f43daf95aea5ea37e2a3; YD00517437729195%3AWM_TID=zf%2FTyLJxHMdEBVRVVQdrxfeOgY%2FMP4uE; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1618225129,1618233102,1618591082,1618591091; z_c0=&quot;2|1:0|10:1618591107|4:z_c0|92:Mi4xMHIxdkNBQUFBQUFBOE5zc0swUWlFaWNBQUFDRUFsVk5na3FoWUFEU3dNWTFRY2staEwwMWNPOUFTX2d0STY0aDR3|f9a1c3a722b771962977d0cb535ac933961ddf51231b4795abdc9f9c8f5eef31&quot;; tst=r; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1618591136; KLBRSID=0a401b23e8a71b70de2f4b37f5b4e379|1618591507|1618591064'
+}
+url='https://www.zhihu.com/hot'
+
+def get_question_num(url,headers):
+    response=requests.get(url,headers=headers)
+    text=response.text
+    html=etree.HTML(text)
+    reslut=html.xpath(&quot;//section[@class='HotItem']&quot;)
+    # 问题id
+    question_list=[]
+    for question in reslut:
+        number=question.xpath(&quot;.//div[@class='HotItem-index']//text()&quot;)[0].strip()
+        title=question.xpath(&quot;.//h2[@class='HotItem-title']/text()&quot;)[0].strip()
+        href=question.xpath(&quot;.//div[@class='HotItem-content']/a/@href&quot;)[0].strip()
+        question_num=href.strip('/')[-1]
+        question_list.append([question_num,title])
+    return question_list
+</code></pre>
+<p>现在有了问题id想要获取这个问题的回答,但是遇到了很大的麻烦,因为是第一次编爬虫本来就是新手,还遇到了一个有反爬虫的网站令人头疼,在get问题url时获得404警告,禁止访问,然后查了很多大佬的教程和文章,花了很长时间明白了,知乎的反爬虫破解需要在headers中加入一个x-zse-86+加密文的内容,需要做的是了解知乎的密文是如何加密的,还是在浏览器端查响应和网站代码,Ctrl+f查询x-zse-86的信息,可以查到这段密文有两次加密,第一次是通过问题的url用MD5的方式加密,之后用加密后的32位密文通过知乎自己的加密方式生成新的密文,第一种方式比较容易解决通过MD5加密就行,第二步不能用猜或者很简单的方式进行,所以可以通过之间查网站的代码,扒取相关函数,生成一个js文件(这部分超纲了,完全看不懂)学习到大佬的做法是打断点慢慢调试扒出相关函数,然后写成一个js文件,在进行爬虫的时候可以调用这个js获得加密后的密文<br>
+新的headers应该是</p>
+<pre><code>headers = {
+
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&quot;,
+    &quot;cookie&quot;: 'd_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;;',
+    &quot;x-api-version&quot;: &quot;3.0.91&quot;,
+    &quot;x-zse-83&quot;: &quot;3_2.0&quot;,
+    &quot;x-zse-86&quot;: &quot;1.0_%s&quot; % encrypt_str,
+}
+</code></pre>
+<p>加密的js代码为</p>
+<pre><code>const jsdom = require(&quot;jsdom&quot;);
+const { JSDOM } = jsdom;
+const dom = new JSDOM(`&lt;!DOCTYPE html&gt;&lt;p&gt;Hello world&lt;/p&gt;`);
+window = dom.window;
+document = window.document;
+XMLHttpRequest = window.XMLHttpRequest;
+
+	var exports = {}
+	function t(e) {
+        return (t = &quot;function&quot; == typeof Symbol &amp;&amp; &quot;symbol&quot; == typeof Symbol.A ? function(e) {
+            return typeof e
+        }
+        : function(e) {
+            return e &amp;&amp; &quot;function&quot; == typeof Symbol &amp;&amp; e.constructor === Symbol &amp;&amp; e !== Symbol.prototype ? &quot;symbol&quot; : typeof e
+        }
+        )(e)
+    }
+    Object.defineProperty(exports, &quot;__esModule&quot;, {
+        value: !0
+    });
+    var A = &quot;2.0&quot;
+      , __g = {};
+    function s() {}
+    function i(e) {
+        this.t = (2048 &amp; e) &gt;&gt; 11,
+        this.s = (1536 &amp; e) &gt;&gt; 9,
+        this.i = 511 &amp; e,
+        this.h = 511 &amp; e
+    }
+    function h(e) {
+        this.s = (3072 &amp; e) &gt;&gt; 10,
+        this.h = 1023 &amp; e
+    }
+    function a(e) {
+        this.a = (3072 &amp; e) &gt;&gt; 10,
+        this.c = (768 &amp; e) &gt;&gt; 8,
+        this.n = (192 &amp; e) &gt;&gt; 6,
+        this.t = 63 &amp; e
+    }
+    function c(e) {
+        this.s = e &gt;&gt; 10 &amp; 3,
+        this.i = 1023 &amp; e
+    }
+    function n() {}
+    function e(e) {
+        this.a = (3072 &amp; e) &gt;&gt; 10,
+        this.c = (768 &amp; e) &gt;&gt; 8,
+        this.n = (192 &amp; e) &gt;&gt; 6,
+        this.t = 63 &amp; e
+    }
+    function o(e) {
+        this.h = (4095 &amp; e) &gt;&gt; 2,
+        this.t = 3 &amp; e
+    }
+    function r(e) {
+        this.s = e &gt;&gt; 10 &amp; 3,
+        this.i = e &gt;&gt; 2 &amp; 255,
+        this.t = 3 &amp; e
+    }
+    s.prototype.e = function(e) {
+        e.o = !1
+    }
+    ,
+    i.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.r[this.s] = this.i;
+            break;
+        case 1:
+            e.r[this.s] = e.k[this.h]
+        }
+    }
+    ,
+    h.prototype.e = function(e) {
+        e.k[this.h] = e.r[this.s]
+    }
+    ,
+    a.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.r[this.a] = e.r[this.c] + e.r[this.n];
+            break;
+        case 1:
+            e.r[this.a] = e.r[this.c] - e.r[this.n];
+            break;
+        case 2:
+            e.r[this.a] = e.r[this.c] * e.r[this.n];
+            break;
+        case 3:
+            e.r[this.a] = e.r[this.c] / e.r[this.n];
+            break;
+        case 4:
+            e.r[this.a] = e.r[this.c] % e.r[this.n];
+            break;
+        case 5:
+            e.r[this.a] = e.r[this.c] == e.r[this.n];
+            break;
+        case 6:
+            e.r[this.a] = e.r[this.c] &gt;= e.r[this.n];
+            break;
+        case 7:
+            e.r[this.a] = e.r[this.c] || e.r[this.n];
+            break;
+        case 8:
+            e.r[this.a] = e.r[this.c] &amp;&amp; e.r[this.n];
+            break;
+        case 9:
+            e.r[this.a] = e.r[this.c] !== e.r[this.n];
+            break;
+        case 10:
+            e.r[this.a] = t(e.r[this.c]);
+            break;
+        case 11:
+            e.r[this.a] = e.r[this.c]in e.r[this.n];
+            break;
+        case 12:
+            e.r[this.a] = e.r[this.c] &gt; e.r[this.n];
+            break;
+        case 13:
+            e.r[this.a] = -e.r[this.c];
+            break;
+        case 14:
+            e.r[this.a] = e.r[this.c] &lt; e.r[this.n];
+            break;
+        case 15:
+            e.r[this.a] = e.r[this.c] &amp; e.r[this.n];
+            break;
+        case 16:
+            e.r[this.a] = e.r[this.c] ^ e.r[this.n];
+            break;
+        case 17:
+            e.r[this.a] = e.r[this.c] &lt;&lt; e.r[this.n];
+            break;
+        case 18:
+            e.r[this.a] = e.r[this.c] &gt;&gt;&gt; e.r[this.n];
+            break;
+        case 19:
+            e.r[this.a] = e.r[this.c] | e.r[this.n];
+            break;
+        case 20:
+            e.r[this.a] = !e.r[this.c]
+        }
+    }
+    ,
+    c.prototype.e = function(e) {
+        e.Q.push(e.C),
+        e.B.push(e.k),
+        e.C = e.r[this.s],
+        e.k = [];
+        for (var t = 0; t &lt; this.i; t++)
+            e.k.unshift(e.f.pop());
+        e.g.push(e.f),
+        e.f = []
+    }
+    ,
+    n.prototype.e = function(e) {
+        e.C = e.Q.pop(),
+        e.k = e.B.pop(),
+        e.f = e.g.pop()
+    }
+    ,
+    e.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.u = e.r[this.a] &gt;= e.r[this.c];
+            break;
+        case 1:
+            e.u = e.r[this.a] &lt;= e.r[this.c];
+            break;
+        case 2:
+            e.u = e.r[this.a] &gt; e.r[this.c];
+            break;
+        case 3:
+            e.u = e.r[this.a] &lt; e.r[this.c];
+            break;
+        case 4:
+            e.u = e.r[this.a] == e.r[this.c];
+            break;
+        case 5:
+            e.u = e.r[this.a] != e.r[this.c];
+            break;
+        case 6:
+            e.u = e.r[this.a];
+            break;
+        case 7:
+            e.u = !e.r[this.a]
+        }
+    }
+    ,
+    o.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.C = this.h;
+            break;
+        case 1:
+            e.u &amp;&amp; (e.C = this.h);
+            break;
+        case 2:
+            e.u || (e.C = this.h);
+            break;
+        case 3:
+            e.C = this.h,
+            e.w = null
+        }
+        e.u = !1
+    }
+    ,
+    r.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            for (var t = [], n = 0; n &lt; this.i; n++)
+                t.unshift(e.f.pop());
+            e.r[3] = e.r[this.s](t[0], t[1]);
+            break;
+        case 1:
+            for (var r = e.f.pop(), o = [], i = 0; i &lt; this.i; i++)
+                o.unshift(e.f.pop());
+            e.r[3] = e.r[this.s][r](o[0], o[1]);
+            break;
+        case 2:
+            for (var a = [], c = 0; c &lt; this.i; c++)
+                a.unshift(e.f.pop());
+            e.r[3] = new e.r[this.s](a[0],a[1])
+        }
+    }
+    ;
+    var k = function(e) {
+        for (var t = 66, n = [], r = 0; r &lt; e.length; r++) {
+            var o = 24 ^ e.charCodeAt(r) ^ t;
+            n.push(String.fromCharCode(o)),
+            t = o
+        }
+        return n.join(&quot;&quot;)
+    };
+    function Q(e) {
+        this.t = (4095 &amp; e) &gt;&gt; 10,
+        this.s = (1023 &amp; e) &gt;&gt; 8,
+        this.i = 1023 &amp; e,
+        this.h = 63 &amp; e
+    }
+    function C(e) {
+        this.t = (4095 &amp; e) &gt;&gt; 10,
+        this.a = (1023 &amp; e) &gt;&gt; 8,
+        this.c = (255 &amp; e) &gt;&gt; 6
+    }
+    function B(e) {
+        this.s = (3072 &amp; e) &gt;&gt; 10,
+        this.h = 1023 &amp; e
+    }
+    function f(e) {
+        this.h = 4095 &amp; e
+    }
+    function g(e) {
+        this.s = (3072 &amp; e) &gt;&gt; 10
+    }
+    function u(e) {
+        this.h = 4095 &amp; e
+    }
+    function w(e) {
+        this.t = (3840 &amp; e) &gt;&gt; 8,
+        this.s = (192 &amp; e) &gt;&gt; 6,
+        this.i = 63 &amp; e
+    }
+    function G() {
+        this.r = [0, 0, 0, 0],
+        this.C = 0,
+        this.Q = [],
+        this.k = [],
+        this.B = [],
+        this.f = [],
+        this.g = [],
+        this.u = !1,
+        this.G = [],
+        this.b = [],
+        this.o = !1,
+        this.w = null,
+        this.U = null,
+        this.F = [],
+        this.R = 0,
+        this.J = {
+            0: s,
+            1: i,
+            2: h,
+            3: a,
+            4: c,
+            5: n,
+            6: e,
+            7: o,
+            8: r,
+            9: Q,
+            10: C,
+            11: B,
+            12: f,
+            13: g,
+            14: u,
+            15: w
+        }
+    }
+    Q.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            e.f.push(e.r[this.s]);
+            break;
+        case 1:
+            e.f.push(this.i);
+            break;
+        case 2:
+            e.f.push(e.k[this.h]);
+            break;
+        case 3:
+            e.f.push(k(e.b[this.h]))
+        }
+    }
+    ,
+    C.prototype.e = function(A) {
+        switch (this.t) {
+        case 0:
+            var t = A.f.pop();
+            A.r[this.a] = A.r[this.c][t];
+            break;
+        case 1:
+            var s = A.f.pop()
+              , i = A.f.pop();
+            A.r[this.c][s] = i;
+            break;
+        case 2:
+            var h = A.f.pop();
+            A.r[this.a] = eval(h)
+        }
+    }
+    ,
+    B.prototype.e = function(e) {
+        e.r[this.s] = k(e.b[this.h])
+    }
+    ,
+    f.prototype.e = function(e) {
+        e.w = this.h
+    }
+    ,
+    g.prototype.e = function(e) {
+        throw e.r[this.s]
+    }
+    ,
+    u.prototype.e = function(e) {
+        var t = this
+          , n = [0];
+        e.k.forEach(function(e) {
+            n.push(e)
+        });
+        var r = function(r) {
+            var o = new G;
+            return o.k = n,
+            o.k[0] = r,
+            o.v(e.G, t.h, e.b, e.F),
+            o.r[3]
+        };
+        r.toString = function() {
+            return &quot;() { [native code] }&quot;
+        }
+        ,
+        e.r[3] = r
+    }
+    ,
+    w.prototype.e = function(e) {
+        switch (this.t) {
+        case 0:
+            for (var t = {}, n = 0; n &lt; this.i; n++) {
+                var r = e.f.pop();
+                t[e.f.pop()] = r
+            }
+            e.r[this.s] = t;
+            break;
+        case 1:
+            for (var o = [], i = 0; i &lt; this.i; i++)
+                o.unshift(e.f.pop());
+            e.r[this.s] = o
+        }
+    }
+    ,
+    G.prototype.D = function(e) {
+        console.log(window.atob(e));
+        for (var t = window.atob(e), n = t.charCodeAt(0) &lt;&lt; 8 | t.charCodeAt(1), r = [], o = 2; o &lt; n + 2; o += 2)
+            r.push(t.charCodeAt(o) &lt;&lt; 8 | t.charCodeAt(o + 1));
+        this.G = r;
+        for (var i = [], a = n + 2; a &lt; t.length; ) {
+            var c = t.charCodeAt(a) &lt;&lt; 8 | t.charCodeAt(a + 1)
+              , s = t.slice(a + 2, a + 2 + c);
+            i.push(s),
+            a += c + 2
+        }
+        this.b = i
+    }
+    ,
+    G.prototype.v = function(e, t, n) {
+        for (t = t || 0,
+        n = n || [],
+        this.C = t,
+        &quot;string&quot; == typeof e ? this.D(e) : (this.G = e,
+        this.b = n),
+        this.o = !0,
+        this.R = Date.now(); this.o; ) {
+            var r = this.G[this.C++];
+            if (&quot;number&quot; != typeof r)
+                break;
+            var o = Date.now();
+            if (500 &lt; o - this.R)
+                return;
+            this.R = o;
+            try {
+                this.e(r)
+            } catch (e) {
+                this.U = e,
+                this.w &amp;&amp; (this.C = this.w)
+            }
+        }
+    }
+    ,
+    G.prototype.e = function(e) {
+        var t = (61440 &amp; e) &gt;&gt; 12;
+        new this.J[t](e).e(this)
+    }
+    ,
+     (new G).v(&quot;AxjgB5MAnACoAJwBpAAAABAAIAKcAqgAMAq0AzRJZAZwUpwCqACQACACGAKcBKAAIAOcBagAIAQYAjAUGgKcBqFAuAc5hTSHZAZwqrAIGgA0QJEAJAAYAzAUGgOcCaFANRQ0R2QGcOKwChoANECRACQAsAuQABgDnAmgAJwMgAGcDYwFEAAzBmAGcSqwDhoANECRACQAGAKcD6AAGgKcEKFANEcYApwRoAAxB2AGcXKwEhoANECRACQAGAKcE6AAGgKcFKFANEdkBnGqsBUaADRAkQAkABgCnBagAGAGcdKwFxoANECRACQAGAKcGKAAYAZx+rAZGgA0QJEAJAAYA5waoABgBnIisBsaADRAkQAkABgCnBygABoCnB2hQDRHZAZyWrAeGgA0QJEAJAAYBJwfoAAwFGAGcoawIBoANECRACQAGAOQALAJkAAYBJwfgAlsBnK+sCEaADRAkQAkABgDkACwGpAAGAScH4AJbAZy9rAiGgA0QJEAJACwI5AAGAScH6AAkACcJKgAnCWgAJwmoACcJ4AFnA2MBRAAMw5gBnNasCgaADRAkQAkABgBEio0R5EAJAGwKSAFGACcKqAAEgM0RCQGGAYSATRFZAZzshgAtCs0QCQAGAYSAjRFZAZz1hgAtCw0QCQAEAAgB7AtIAgYAJwqoAASATRBJAkYCRIANEZkBnYqEAgaBxQBOYAoBxQEOYQ0giQKGAmQABgAnC6ABRgBGgo0UhD/MQ8zECALEAgaBxQBOYAoBxQEOYQ0gpEAJAoYARoKNFIQ/zEPkAAgChgLGgkUATmBkgAaAJwuhAUaCjdQFAg5kTSTJAsQCBoHFAE5gCgHFAQ5hDSCkQAkChgBGgo0UhD/MQ+QACAKGAsaCRQCOYGSABoAnC6EBRoKN1AUEDmRNJMkCxgFGgsUPzmPkgAaCJwvhAU0wCQFGAUaCxQGOZISPzZPkQAaCJwvhAU0wCQFGAUaCxQMOZISPzZPkQAaCJwvhAU0wCQFGAUaCxQSOZISPzZPkQAaCJwvhAU0wCQFGAkSAzRBJAlz/B4FUAAAAwUYIAAIBSITFQkTERwABi0GHxITAAAJLwMSGRsXHxMZAAk0Fw8HFh4NAwUABhU1EBceDwAENBcUEAAGNBkTGRcBAAFKAAkvHg4PKz4aEwIAAUsACDIVHB0QEQ4YAAsuAzs7AAoPKToKDgAHMx8SGQUvMQABSAALORoVGCQgERcCAxoACAU3ABEXAgMaAAsFGDcAERcCAxoUCgABSQAGOA8LGBsPAAYYLwsYGw8AAU4ABD8QHAUAAU8ABSkbCQ4BAAFMAAktCh8eDgMHCw8AAU0ADT4TGjQsGQMaFA0FHhkAFz4TGjQsGQMaFA0FHhk1NBkCHgUbGBEPAAFCABg9GgkjIAEmOgUHDQ8eFSU5DggJAwEcAwUAAUMAAUAAAUEADQEtFw0FBwtdWxQTGSAACBwrAxUPBR4ZAAkqGgUDAwMVEQ0ACC4DJD8eAx8RAAQ5GhUYAAFGAAAABjYRExELBAACWhgAAVoAQAg/PTw0NxcQPCQ5C3JZEBs9fkcnDRcUAXZia0Q4EhQgXHojMBY3MWVCNT0uDhMXcGQ7AUFPHigkQUwQFkhaAkEACjkTEQspNBMZPC0ABjkTEQsrLQ==&quot;);
+     function b(e) {
+         console.log(e);
+         console.log(encodeURIComponent(e));
+        return __g._encrypt(encodeURIComponent(e))
+    };
+</code></pre>
+<p>调用js需要nodejs支持,可以通过官网下载配置全局环境,在全局使用npm install jsdom安装库之后就可以在python中调用js文件<br>
+现在有了问题的url有了headers有了加密方式就可以爬取知乎问题的内容了,爬取后正则化表示和数据库保存就是下一个阶段需要学习努力的方向<br>
+完整代码</p>
+<pre><code>import requests
+import execjs
+import hashlib
+
+
+url = &quot;/api/v4/questions/454944228/answers?include=data%5B%2A%5D.is_normal%2Cadmin_closed_comment%2Creward_info%2Cis_collapsed%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cattachment%2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Cis_labeled%2Cpaid_info%2Cpaid_info_content%2Crelationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2Cis_recognized%3Bdata%5B%2A%5D.mark_infos%5B%2A%5D.url%3Bdata%5B%2A%5D.author.follower_count%2Cbadge%5B%2A%5D.topics%3Bdata%5B%2A%5D.settings.table_of_content.enabled&amp;limit=5&amp;offset=5&amp;platform=desktop&amp;sort_by=default&quot;
+
+f = &quot;+&quot;.join([&quot;3_2.0&quot;, url,'&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;'])
+
+fmd5 = hashlib.new('md5', f.encode()).hexdigest()
+
+with open('g_encrypt.js', 'r') as f:
+    ctx1 = execjs.compile(f.read(), cwd=r'C:\Users\MRCHENIKE\node_modules')
+encrypt_str = ctx1.call('b', fmd5)
+
+headers = {
+
+    &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&quot;,
+    &quot;cookie&quot;: 'd_c0=&quot;APDbLCtEIhKPTvTGXezwgGYuHiUrCZuacDU=|1604317216&quot;;',
+    &quot;x-api-version&quot;: &quot;3.0.91&quot;,
+    &quot;x-zse-83&quot;: &quot;3_2.0&quot;,
+    &quot;x-zse-86&quot;: &quot;1.0_%s&quot; % encrypt_str,
+}
+print(headers)
+r = requests.get(&quot;https://www.zhihu.com&quot; + url, headers=headers)
+
+all_detail_data = r.json()['data']
+length_detail_data = len(all_detail_data)
+txt_1=open(&quot;txt1.txt&quot;,&quot;w&quot;)
+for one_detail_data in all_detail_data:
+
+    answer_author = one_detail_data['author']['name']
+    author_introduce = one_detail_data['author']['headline']
+    author_followers = one_detail_data['author']['follower_count']
+    answer_vote_num = one_detail_data['voteup_count']
+    answer_comment_num = one_detail_data['comment_count']
+    updated_time = one_detail_data['updated_time']
+    content = one_detail_data['content']
+    txt_1.write(content)
+txt_1.close()
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[夜话]日常？]]></title>
         <id>https://zbigboom.github.io/post/13/</id>
@@ -384,694 +941,6 @@ this操作符：它为当前存储单元定义一个指定类型的标号或变�
 <p>残差网络通过给非线性的卷积层增加直连边的方式来提高信息的传播效率，在深度网络中我们期望一个非线性单元去逼近目标函数，如果将目标函数拆成两个部分恒等函数和残差函数，根据通用近似定理，一个由神经网络构成的非线性单元有足够能力来近似逼近原始目标函数或残差函数，实际中后者更容易学习，因此原来的优化问题转换成让非线性单元，去近似残差函数。在神经网络发展中发现，网络的层数越深越由可能获得更好的泛化能力，但是当模型加深之后网络变得难以训练，主要是因为梯度弥撒现象造成的，在较深层的神经网络中梯度信息由网络的末层逐层传向首层时，会出现梯度趋近于0的现象，网络越深，梯度弥散现象可能会越严重。典型的残差单元由多个级联的卷积层和一个跨层的直连边组成再经过Relu激活后输出。</p>
 <h3 id="vgg-16">VGG-16：</h3>
 <p>VGG-16相比AlexNet的改进是使用连续的3x3卷积核代替较大的卷积，对于给定的感受野采用堆积的小卷积核是优于使用大卷积核，因为多层非线性层可以增加网络深度来保证学习更复杂的模式，而且参数更少。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[微机]第三章指令系统]]></title>
-        <id>https://zbigboom.github.io/post/5/</id>
-        <link href="https://zbigboom.github.io/post/5/">
-        </link>
-        <updated>2020-12-08T10:33:00.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="指令格式">指令格式</h3>
-<p>一般格式如下：<br>
-指令助记符  操作数列表 ；注释<br>
-指令助记符是指令的名称，对应机器指令中的操作码部分，操作数可以有多个，因指令不同而不同，按序排列并用“，”分开。“；”之后是注释部分，不影响指令操作。</p>
-<h3 id="有效地址ea">有效地址EA</h3>
-<p>指令中的操作数有三个可能存放位置<br>
-①操作数包含在指令中，即指令的操作数部分就是操作数本身，这种操作数叫做立即数，对应的寻址方式称为立即寻址。</p>
-<p>②操作数存放在CPU的某个内部寄存器中，称为寄存器操作数，这时指令的操作数部分是CPU内部寄存器的编码，对应寻址方式称为寄存器寻址。</p>
-<p>③操作数在内存的数据区中，称为存储器操作数，这时指令的操作数部分给出操作数的存储地址，指令执行时需要根据该地址找到需要的操作数，这种寻址方式称为存储器寻址。<br>
-组成有效地址EA的基本部分可以包括：基址寄存器内容；变址寄存器内容；位移量；比例因子。</p>
-<center>EA=（基址寄存器）+（变址寄存器x比例因子）+位移量</center>
-<p>基址寄存器：BX，BP<br>
-变址寄存器：SI，DI<br>
-比例因子：1<br>
-位移量：0，8，16（位）</p>
-<h3 id="各种寻址方式">各种寻址方式</h3>
-<p>Ⅰ立即寻址<br>
-立即寻址方式下，操作数作为立即数包含在指令中，它紧跟在操作码之后与其一起存放在代码段区域。<br>
-Ⅱ寄存器寻址<br>
-寄存器寻址方式的操作数存放在指令规定的8位、16位CPU内部寄存器中。<br>
-这是CPU内部操作，不需要使用访问总线周期，所以指令的执行速度较快。<br>
-Ⅲ存储器寻址方式<br>
-存储器寻址时，操作数是在存储区中，指令的操作数部分指出此操作数的有效地址EA，而段地址在默认的或段超越前缀指定的段寄存器中。根据EA的不同组合方式，存储器寻址方式又可以分为以下：</p>
-<p>①直接寻址：直接寻址是一种最简单的存储器寻址方式。在这种寻址方式下，指令中操作数部分直接给出操作数的有效地址EA，与操作码一起放在代码段中。操作数一般在数据段DS中。如果要对除DS段之外的其他段中的数据寻址，应在指令中增加段超越前缀指出段寄存器名。<br>
-例如：<br>
-mov  AX，[2000H]；将DS段中2000H和2001H单元内容送入AL和AH<br>
-mov AX，ES：[2000H]；将ES段中2000H和2001H单元内容送入AL和AH</p>
-<p>②寄存器间接寻址：操作数在存储区内，操作数的有效地址EA在指令指定的寄存器中，即EA=（寄存器）<br>
-以SI、DI、BX间接寻址，则默认操作数在数据段中<br>
-mov  AX，[SI]；默认DS为段地址<br>
-以BP间接寻址，则默认操作数在堆栈段中<br>
-mov  AX，[BP]；默认为SS为段地址<br>
-若操作数不在上述规定的默认段则必须在指令的相应操作数前加上段超越前缀。<br>
-mov  CX，DS：[BP]；DS是该指令的段超越前缀<br>
-直接寻址中有效地址EA来自指令自身，相当于一个常量。寄存器间接寻址中有效地址EA来自寄存器，寄存器的内容由前面的指令确定，相当于一个变量。</p>
-<p>③基址寻址：这种寻址方式下，操作数的有效地址EA=（基址寄存器）+位移量，式中位移量在指令中给出并与操作码一起存放在代码段中。<br>
-BP和BX作为基址寄存器。默认情况下，BX以DS作为段寄存器，BP以SS作为段寄存器，可以段超越，位移量是8位或16位。</p>
-<p>④变址寻址：变址寻址方式下，有效地址EA=（变址寄存器）+位移量，它的指令格式及寻址过程与基址寻址相同，区别仅在于将基址寄存器改成变址寄存器。<br>
-SI和DI作为变址寄存器，且默认DS作为段寄存器。基址或变址寻址非常适于对一维数组元素进行检索操作，常用为ui连表示数组起始地址，基址或变址寄存器表示数组元素的可变下标。</p>
-<p>⑤比例变址寻址：这种寻址方式只适合32位寻址的情况。（了解）</p>
-<p>⑥基址加变址寻址：这种寻址方式中，操作数的有效地址EA=（基址寄存器）+（变址寄存器）。<br>
-基址、变址寄存器的使用规定和段寄存器的默认规定与前面所述相同，但要注意当一种寻址方式中的基址、变址寄存器默认的段寄存器不同时，一般由基址寄存器来决定默认哪一个段寄存器作短地址。若在指令中规定了段超越则可用其他段寄存器作为短地址。例如：<br>
-mov  AX，[BX+SI]；或写成mov  AX，[BX][SI]，BX决定默认DS为段寄存器<br>
-基址加变址寻址适合检索二维数组元素和双重循环等操作。<br>
-⑦基址加比例变址寻址：这种寻址方式只适合32位寻址情况。（了解 ）</p>
-<p>⑧带位移量的基址加变址寻址：这种寻址方式下，有效地址EA=（基址寄存器）+（变址寄存器）+位移量。<br>
-基址、变址寄存器的使用规定和对段寄存器的默认规定与前面所述相同。例如：<br>
-mov  AX，[BX+SI+MASK]；或写成mov  AX，MASK[BX][SI]<br>
-带位移量的基址加变址寻址也适用于对二维数组操作，位移量即为数组起始地址。</p>
-<p>⑨带位移量的基址加比例变址寻址：这种寻址适用于32位寻址情况。（了解）</p>
-<h3 id="存储器寻址时的段约定">存储器寻址时的段约定</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">访问存储器类型</th>
-<th style="text-align:center">默认段寄存器</th>
-<th style="text-align:center">允许超越的段寄存器</th>
-<th style="text-align:center">偏移地址寄存器</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">取指令</td>
-<td style="text-align:center">CS</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">IP</td>
-</tr>
-<tr>
-<td style="text-align:center">堆栈操作</td>
-<td style="text-align:center">SS</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">SP</td>
-</tr>
-<tr>
-<td style="text-align:center">源串数据访问</td>
-<td style="text-align:center">DS</td>
-<td style="text-align:center">CS、ES、SS</td>
-<td style="text-align:center">SI</td>
-</tr>
-<tr>
-<td style="text-align:center">目的串数据访问</td>
-<td style="text-align:center">ES</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">DI</td>
-</tr>
-<tr>
-<td style="text-align:center">通用数据访问</td>
-<td style="text-align:center">DS</td>
-<td style="text-align:center">CS、ES、SS</td>
-<td style="text-align:center">偏移地址EA</td>
-</tr>
-<tr>
-<td style="text-align:center">以BP、SP间接寻址指令</td>
-<td style="text-align:center">SS</td>
-<td style="text-align:center">CS、DS、ES</td>
-<td style="text-align:center">偏移地址EA</td>
-</tr>
-</tbody>
-</table>
-<h3 id="cpu指令系统">CPU指令系统</h3>
-<p>指令操作数符号说明</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">OPRD，OPRDN</td>
-<td style="text-align:center">操作数；第N个操作数，如OPRD1，OPRD2</td>
-</tr>
-<tr>
-<td style="text-align:center">DEST，SRC</td>
-<td style="text-align:center">目的操作数，源操作数</td>
-</tr>
-<tr>
-<td style="text-align:center">reg</td>
-<td style="text-align:center">通用寄存器，长度可以是8位或16位</td>
-</tr>
-<tr>
-<td style="text-align:center">reg8</td>
-<td style="text-align:center">8位通用寄存器AH/AL/BH/BL/CH/CL/DH/DL</td>
-</tr>
-<tr>
-<td style="text-align:center">reg16</td>
-<td style="text-align:center">16位通用寄存器AX/BX/CX/DX/SI/DI/BP/SP</td>
-</tr>
-<tr>
-<td style="text-align:center">Sreg</td>
-<td style="text-align:center">段寄存器DS/CS/SS/ES</td>
-</tr>
-<tr>
-<td style="text-align:center">mem</td>
-<td style="text-align:center">存储器操作数，长度可以是8位或16位</td>
-</tr>
-<tr>
-<td style="text-align:center">imm</td>
-<td style="text-align:center">立即数，长度可以是8位或16位</td>
-</tr>
-</tbody>
-</table>
-<h3 id="数据传送类指令">数据传送类指令</h3>
-<p>Ⅰ通用数据传送</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>字节或字传送</td>
-<td>mov 目标，源</td>
-</tr>
-<tr>
-<td>字压入堆栈</td>
-<td>push 源</td>
-</tr>
-<tr>
-<td>字弹出堆栈</td>
-<td>pop 目标</td>
-</tr>
-<tr>
-<td>字节或字交换</td>
-<td>xchg 目标，源</td>
-</tr>
-<tr>
-<td>字节翻译</td>
-<td>xlat</td>
-</tr>
-</tbody>
-</table>
-<p>①mov指令<br>
-指令格式：mov OPRD1，OPRD2<br>
-功能：将源操作数传送给目标操作数，即OPRD2-&gt;OPRD1，源操作数保持不变。<br>
-注意：OPRD1和OPRD2的长度一致；立即数和段寄存器CS不能作为目标操作数；立即数不能直接传送到段寄存器；不允许在两个存储单元之间或在两个段寄存器之间直接传送数据；将立即数传送到存储单元时，必须显式说明存储器操作数的宽度类型。</p>
-<p>②堆栈操作指令push/pop<br>
-指令格式：push OPERD2；pop OPRD1<br>
-功能：push指令使SP-2-&gt;SP，然后将16位源操作数压入堆栈。入栈时高字节存放在高地址，源操作数可以是通用寄存器、段寄存器和存储器。<br>
-pop指令使SP+2-&gt;SP，弹出时低地址字节送低字节，使SP指向新的栈顶，目标操作数可以是通用寄存器、段寄存器（CS除外）或存储器。</p>
-<p>③交换指令xchg<br>
-指令格式：xchg OPRD1，OPRD2<br>
-功能：将长度相同的源操作数与目标操作数进行交换。<br>
-注意：段寄存器和立即数不能作为操作数；不能在两个存储单元之间之间交换数据。</p>
-<p>④查表转换指令xlat（或称换码指令）<br>
-指令格式：xlat或xlat OPRD<br>
-功能：完成1字节的查表转换。它将数据段中偏移地址位（BX+AL）的存储单元的内容送入AL寄存器，即DS：[BX+AL]-&gt;AL。<br>
-xlat指令对于一些无规律的代码转换特别方便，使用时在数据段建立一个长度小于256字节的表格，表的首地址置于BX中AL中存放查找对象在表中的下标，指令执行后，所查找的对象存于AL中，BX内容保持不变。</p>
-<p>Ⅱ地址传送</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>装入有效地址</td>
-<td>lea 目标，源</td>
-</tr>
-<tr>
-<td>装入逻辑地址</td>
-<td>lds 目标，源</td>
-</tr>
-<tr>
-<td>装入逻辑地址</td>
-<td>les 目标，源</td>
-</tr>
-</tbody>
-</table>
-<p>①有效地址传送指令lea<br>
-指令格式：lea OPRD1，OPRD2<br>
-功能：将源操作数在当前段内的有效地址（即偏移地址）传送至目标操作数。<br>
-注意：这条指令同mov指令的区别是，mov指令传送操作数的内容，而lea传送的是操作数的存储地址。</p>
-<p>②地址指针传送指令lds和les<br>
-指令格式：lds/les OPRD1，OPRD2<br>
-功能：这两条指令的功能类似，都是将源操作数偏移地址的双字存储单元中的第一个字的内容送入指定的16位通用寄存器，第二个字的内容传送给段寄存器DS或ES。</p>
-<p>Ⅲ标志位传送</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>将标志寄存器FR低字节装入AH</td>
-<td>lahf</td>
-</tr>
-<tr>
-<td>将AH内容装入FR低字节</td>
-<td>sahf</td>
-</tr>
-<tr>
-<td>将FR内容压入堆栈</td>
-<td>pushf</td>
-</tr>
-<tr>
-<td>从堆栈弹出FR内容</td>
-<td>popf</td>
-</tr>
-</tbody>
-</table>
-<p>①标志寄存器读/写指令lahf/sahf<br>
-功能：lahf用于用于将标志寄存器的低字节（含SF、ZF、AF、PF、CF）读出后送给AH寄存器，本条指令本身不影响标志位。sahf与lahf的操作相反。</p>
-<p>②标志寄存器入栈/出栈指令pushf/popf<br>
-pushf指令的执行过程同push指令，只是将标志寄存器FR的内容压入堆栈，popf则是将当前栈顶的一个字传送给标志寄存器FR，同时修改栈顶指针SP。</p>
-<p>ⅣI/O数据传送</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>输入字节或字</td>
-<td>in 累加器，端口</td>
-</tr>
-<tr>
-<td>输出字节或字</td>
-<td>out 端口，累加器</td>
-</tr>
-</tbody>
-</table>
-<p>输入/输出数据传送指令in/out<br>
-指令格式：in OPRD1，OPRD2<br>
-功能：这组指令专门用于在AL或AX寄存器与I/O端口之间传送数据。</p>
-<h3 id="算术运算类指令">算术运算类指令</h3>
-<p>Ⅰ二进制加减法类算术运算指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加法</td>
-<td>add 目标，源</td>
-</tr>
-<tr>
-<td>带进位加法</td>
-<td>adc 目标，源</td>
-</tr>
-<tr>
-<td>加1</td>
-<td>inc 目标</td>
-</tr>
-<tr>
-<td>减法</td>
-<td>sub 目标，源</td>
-</tr>
-<tr>
-<td>带借位减法</td>
-<td>sbb 目标，源</td>
-</tr>
-<tr>
-<td>减1</td>
-<td>dec 目标</td>
-</tr>
-<tr>
-<td>取负</td>
-<td>neg 目标</td>
-</tr>
-<tr>
-<td>比较</td>
-<td>cmp 目标，源</td>
-</tr>
-</tbody>
-</table>
-<p>①加/减法指令add/sub<br>
-指令格式：add/sub OPRD1，OPRD2<br>
-功能：完成两个操作数的加/减运算，结果送入目标操作数，即OPRD1±OPRD2-&gt;OPRD1<br>
-注意：要求源操作数和目标操作数同为带符号数或无符号数，且长度相等。源操作数可以是寄存器、存储器、或立即数，目标操作数只能是寄存器或存储器，且两个操作数不能同时为存储器。运算影响全部状态标志位。</p>
-<p>②带进/借位的加/减法指令adc/sbb<br>
-指令格式：adc/sbb OPRD1，OPRD2<br>
-功能：adc/sbb指令常与add/sub配合，用于两个或两个以上的多进度数的运算，除了加法操作时加上的进位或减法时的借位，它们同add/sub指令的使用注意事项和对标志位的影响情况相同。</p>
-<p>③增量和减量指令inc/dec<br>
-指令格式：inc/dec OPRD<br>
-功能：inc/dec是单操作数指令，完成对指定操作数的加一减一，然后返回运算结果。<br>
-主要是用于调整地址指针和计数器，所以不影响CF标志。</p>
-<p>④求补指令neg<br>
-指令格式：neg OPRD<br>
-功能：对操作数求补，即用0减去操作数，再把结果送回操作数，求补运算也可以表达将操作数按位取反加一，neg指令影响所有状态标志位。</p>
-<p>⑤比较指令cmp<br>
-指令格式：cmp OPRD1，OPRD2<br>
-功能：cmp将计算OPRD1-OPRD2，但运算结果不返回OPRD1，即cmp指令与sub执行同样的操作，同样影响标志位，只是不改变操作数本身。参加比较的源操作数可以是立即数、寄存器或存储器操作数，目标操作数只能是寄存器或存储器操作数。<br>
-如果是两个无符号数比较，若CF=1则OPRD1 &lt; OPRD2；若CF=0，则OPRD1 &gt; OPRD2<br>
-如果是两个带符号数比较，SF异或OF=1则OPRD1 &lt; OPRD2；SF异或OF=0则OPRD1 &gt; OPRD2<br>
-无论操作数是否带符号ZF=1则OPRD1=OPRD2。</p>
-<p>Ⅱ二进制乘/除法指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>不带符号乘法</td>
-<td>mul</td>
-</tr>
-<tr>
-<td>带符号乘法</td>
-<td>imul</td>
-</tr>
-<tr>
-<td>不带符号除法</td>
-<td>div</td>
-</tr>
-<tr>
-<td>带符号除法</td>
-<td>idiv</td>
-</tr>
-</tbody>
-</table>
-<p>①乘法指令mul/imul<br>
-指令格式：mul/imul OPRD<br>
-功能：mul/imul指令分别用于实现无符号数的乘法和有符号数的乘法，他们都只有一个源操作数，源操作数可以是寄存器或存储器，而目标操作数隐含规定在累加器中。<br>
-若OPRD为字节则ALxOPRD乘积存于AX；若OPRD为字则AXxOPRD乘积的高16位存于DX低16位存于AX中。由于乘法指令保留了2倍于原来操作数的存储空间，因而不会出现溢出现象。</p>
-<p>②除法指令div/idiv<br>
-指令格式：div/idiv OPRD<br>
-对于字节除法，被除数在AX中，除数即OPRD（字节）商在AL中，余数在AH中；对于字除法，被除数高位在DX中，低位在AX中，除数OPRD（字），商在AX中，余数在DX中。若商超过存放它的寄存器容量，则会引起0型中断，且商和余数为不定值。<br>
-注意：在除法运算中，要求被除数的长度为除数长度的2倍，若被除数和除数是具有相同位数的字节或字，这是需要将被除数扩展为字或双字，且大小符号不变，然后再相除。</p>
-<p>Ⅲ符号扩展指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>字节转换字</td>
-<td>cbw</td>
-</tr>
-<tr>
-<td>字转换双字</td>
-<td>cwd</td>
-</tr>
-</tbody>
-</table>
-<p>符号扩展指令cbw/cwd<br>
-指令格式cbw/cwd<br>
-功能：cbw/cwd分别用于将有符号操作数从字节转换成字或从字转换为双字，操作数隐含规定在累加器中。<br>
-cbw将AL中的字节符号数的符号扩展到AH；cwd将AX中的子符号数的符号扩展到DX中。<br>
-注意：对无符号数，可采用直接使高位置‘0’的方法进行扩展。</p>
-<p>ⅣBCD（十进制）运算调整指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>非压缩BCD数的加法调整</td>
-<td>aaa</td>
-</tr>
-<tr>
-<td>压缩BCD数的加法调整</td>
-<td>daa</td>
-</tr>
-<tr>
-<td>非压缩BCD数的减法调整</td>
-<td>aas</td>
-</tr>
-<tr>
-<td>压缩BCD数的减法调整</td>
-<td>das</td>
-</tr>
-<tr>
-<td>非压缩BCD数的乘法调整</td>
-<td>aam</td>
-</tr>
-<tr>
-<td>非压缩BCD数的除法调整</td>
-<td>aad</td>
-</tr>
-</tbody>
-</table>
-<p>①非压缩BCD数加/减法调整指令aaa/aas<br>
-功能：aaa/aas用于将AL中的两个非压缩BCD数相加/减后的结果进行调整，以得到正确的非压缩BCD和/差，程序中它们紧跟在add/sub指令之后。</p>
-<p>②压缩BCD数加/减法调整指令daa/das<br>
-功能：用于将AL中两个压缩BCD数相加/减的结果进行校正，以得到正确的压缩BCD和/差。程序中它们紧跟在add/sub指令之后。</p>
-<p>③非压缩BCD数乘/除法调整指令aam/aad<br>
-功能：aam紧跟在mul指令之后，将AX中两个1位非压缩BCD数相乘的结果进行调整；aad在两个非压缩BCD数的除法运算之前，先调整AL和AH中的内容，再用div指令相除。</p>
-<h3 id="逻辑运算与移位指令">逻辑运算与移位指令</h3>
-<p>Ⅰ逻辑运算指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>非（字/字节）</td>
-<td>not 目标</td>
-</tr>
-<tr>
-<td>与（字/字节）</td>
-<td>and 目标，源</td>
-</tr>
-<tr>
-<td>或（字/字节）</td>
-<td>or 目标，源</td>
-</tr>
-<tr>
-<td>异或（字/字节）</td>
-<td>xor 目标，源</td>
-</tr>
-<tr>
-<td>测试（字/字节）</td>
-<td>test 目标，源</td>
-</tr>
-</tbody>
-</table>
-<p>①逻辑非指令not<br>
-指令格式：not OPRD<br>
-功能：将操作数“按位取反”然后送回原处。</p>
-<p>②逻辑与/或/异或指令and/ior/xor<br>
-指令格式：and/or/xor OPRD1，OPRD2<br>
-功能：and，or，xor指令执行按位逻辑“与”、“或”、“异或”操作，它们均为双操作数指令，两个操作数宽度必须相等，执行结果存入OPRD1中。<br>
-and指令用于某些位要清零，其余位保持不变（要清零的位和0相与结果为0）<br>
-or指令用于对某些位置1，其余位保持不变（要置1的位和1相或结果为1）<br>
-xor指令用于某些位取反，其余位保持不变（要取反的位和1相异或结果取反）</p>
-<p>③测试指令test<br>
-指令格式：test OPRD1，OPRD2<br>
-若希望在不改变原有操作数的情况下来检测操作数的某一位或某几位是1还是0，可以使用test指令test指令功能与and指令相同，但操作结果不送回目标操作数，只根据结果设置标志位，这条指令后一般都是条件转移指令，利用测试结果转向不同的程序段。</p>
-<h3 id="移位和循环移位指令">移位和循环移位指令</h3>
-<p>Ⅰ移位指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>逻辑左移</td>
-<td>shl 目标，计算值</td>
-</tr>
-<tr>
-<td>算术左移</td>
-<td>sal 目标，计数值</td>
-</tr>
-<tr>
-<td>逻辑右移</td>
-<td>shr 目标，计数值</td>
-</tr>
-<tr>
-<td>算术右移</td>
-<td>sar 目标，计数值</td>
-</tr>
-</tbody>
-</table>
-<p>左移是每移位一次操作数按位依次左移1位，最高位进入CF，右端补零；右移是逻辑右移按位依次右移最高位补零，最低位移到CF。计算右移是按位依次右移，最低位到CF，CF到最高位。<br>
-移位指令是将字节或字某些位分离，或左移表示对二进制数进行2的幂次方运算，右移表示对二进制数除以2的次方。</p>
-<p>Ⅱ循环移位指令</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>循环左移</td>
-<td>rol 目标，计数值</td>
-</tr>
-<tr>
-<td>循环右移</td>
-<td>ror 目标，计数值</td>
-</tr>
-<tr>
-<td>带进位循环左移</td>
-<td>rcl 目标，计数值</td>
-</tr>
-<tr>
-<td>带进位循环右移</td>
-<td>rcr 目标，计数值</td>
-</tr>
-</tbody>
-</table>
-<p>循环移位指令有带进位和不带进位两种，带进位的循环吧CF标志作为操作数的扩展参与循环，不带进位的CF不参与循环，只影响CF，只存放最后一次循环移除的那一位的值。</p>
-<h3 id="控制转移类指令">控制转移类指令</h3>
-<p>Ⅰ无条件转移指令jmp<br>
-指令格式：jmp OPRD<br>
-功能：无条件的转移IP的指向。</p>
-<p>Ⅱ条件转移指令jcc</p>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>结果为0转移</td>
-<td>je/jz</td>
-</tr>
-<tr>
-<td>结果不为0转移</td>
-<td>jne/jnz</td>
-</tr>
-<tr>
-<td>有进/借位转移</td>
-<td>jc</td>
-</tr>
-<tr>
-<td>无进/借位转移</td>
-<td>jnc</td>
-</tr>
-<tr>
-<td>溢出转移</td>
-<td>jo</td>
-</tr>
-<tr>
-<td>无溢出转移</td>
-<td>jno</td>
-</tr>
-<tr>
-<td>奇偶性1为偶转移</td>
-<td>jp/jpe</td>
-</tr>
-<tr>
-<td>奇偶性0为奇转移</td>
-<td>jnp/jpo</td>
-</tr>
-<tr>
-<td>符号位为1转移</td>
-<td>js</td>
-</tr>
-<tr>
-<td>符号位为0转移</td>
-<td>jns</td>
-</tr>
-</tbody>
-</table>
-<p>指令格式：jcc OPRD<br>
-根据条件判断进行转移。</p>
-<h3 id="循环控制指令">循环控制指令</h3>
-<table>
-<thead>
-<tr>
-<th>指令功能</th>
-<th>指令书写格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>循环</td>
-<td>loop</td>
-</tr>
-<tr>
-<td>结果为0循环</td>
-<td>loope/loopz</td>
-</tr>
-<tr>
-<td>结果不为0循环</td>
-<td>loopne/loopnz</td>
-</tr>
-<tr>
-<td>CX=0时转移</td>
-<td>jcxz</td>
-</tr>
-</tbody>
-</table>
-<p>指令格式：loop OPRD<br>
-功能：控制程序有规律的循环，他们默认CX为递减计数器来控制循环次数，根据对CX内容的测试结果决定程序时循环至目标地址OPRD还是顺序执行下一条指令。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[微机]第二章8086微处理器]]></title>
-        <id>https://zbigboom.github.io/post/4/</id>
-        <link href="https://zbigboom.github.io/post/4/">
-        </link>
-        <updated>2020-12-02T13:20:07.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="8086cpu基本结构">8086CPU基本结构</h3>
-<p>8086由两个独立的处理部件组成：执行部件EU和总线接口部件BIU。<br>
-①执行机构EU：包括8个16位寄存器（通用寄存器AX、BX、CX、DX；指针寄存器SP、BP；变址寄存器SI、DI）算数逻辑部件ALU、标志寄存器FR、暂存寄存器和EU控制系统。<br>
-②总线接口部件BIU：由4个段寄存器（CS、SS、DS、ES）指令指针IP、内部通信寄存器、指令队列、总线控制逻辑和地址加法器组成。</p>
-<h3 id="特点">特点</h3>
-<p>①取指令与执行指令重叠并行（指令流水线）。<br>
-②段寄存器和储存器分段：8086有四个段寄存器，代码段寄存器CS、数据段寄存器DS、堆栈段寄存器SS、附加数据段寄存器ES。<br>
-每个段的物理长度是64K。<br>
-基于存储器的分段结构，在涉及储存器的地址时，必须分清是物理地址还是逻辑地址。CPU访问存储器时地址总线送出的是物理地址，编写程序时则采用逻辑地址，逻辑地址由短地址和偏移量组成。<br>
-物理地址计算公式：</p>
-<center>物理地址=段地址*16+偏移量</center>
-<h3 id="寄存器配置">寄存器配置</h3>
-<p>Ⅰ通用寄存器：8086有8个16位通用寄存器，8个通用寄存器分两组。<br>
-第一组：AX、BX、CX、DX，他们又可以分成两个8位寄存器，当处理字节指令时，用8位寄存器，处理字指令时，用16位寄存器。<br>
-特殊用法：BX寄存器在计算地址时用作基址寄存器；CX寄存器在操作指令中用作计数器；DX寄存器在某些I/O操作期间用来保存I/O端口地址。<br>
-第二组：堆栈指针SP、基地址指针BP、源变址寄存器SI、目的变址寄存器DI，4个16位寄存器。<br>
-这组寄存器的目的是：①算短指令代码的长度②在程序运行过程中，允许指令访问这样的存储单元，他们在段内的偏移量正是前面指令的计算结果③用于寄存偏移量，与段寄存器内容相加获得物理地址。<br>
-Ⅱ段寄存器：见特点中段寄存器。<br>
-Ⅲ指令指针IP：指令指针是一个16位寄存器，功能与程序计数器PC类似。IP总是包含下一条指令在当前代码段的偏移量（人话：IP在这个代码段内保存与下一条指令的偏移量）。</p>
-<center>下一条指令的物理地址=CS*16+IP或CS*10H+IP</center>
-<p>Ⅳ状态标志寄存器FR：FR标志寄存器是16位寄存器，但只使用其中9位。<br>
-①CF进位标志：当进行加减运算时，若最高位产生进位或借位时CF=1。<br>
-②PF奇偶标志：若运算结果低八位中含有1的个数为偶数时PF=1，此标志一般用来检测数据传输中是否发生错误。<br>
-③AF辅助进位标志：低四位向高四位有进位或借位，则AF=1，此标志用于校正BCD编码的十进制算数指令操作。<br>
-④ZF零标志：若运算结果为0，则ZF=1。<br>
-⑤SF符号标志：对于带符号数，若运算结果最高位为1为负数则SF=1。<br>
-⑥OF溢出标志：当进行带符号数补码运算时，结果超出了机器所能表示的数值范围，产生了“溢出”则OF=1。<br>
-⑦IF中断允许标志：该标志用于允许或禁止CPU响应外部中断，由程序控制。若IF=1则CPU可以响应外部可屏蔽中断的中断请求。<br>
-⑧DF方向标志：用于串操作，由程序控制，若DF=1，表示执行串操作时，从高地址开始向低地址逐个处理，即串地址自动减量。<br>
-⑨TF陷阱标志：该标志是为了调试程序而设置的。若TF=1，表示CPU以单步方式执行程序，即CPU每执行完一条指令，就自动产生一次内部中断。</p>
-<h3 id="8086引脚及功能">8086引脚及功能</h3>
-<p>8086有40条引脚（PIN）双列直插式（DIP）封装。<br>
-引脚太多仅列出部分重点，剩余查询教材P56。<br>
-NMI：非屏蔽中断请求，输入，上升沿有效。NMI是上升沿触发的非屏蔽中断请求输入信号，它不能通过软件进行屏蔽，只要引脚上出现一个从低到高的电脉冲，就能使CPU现行指令结束，立即进入中断响应，转去执行NMI中断处理。<br>
-INTR：可屏蔽中断请求，输入，高电平有效。INTR是电平触发，CPU在每条指令的最后一个时钟周期对INTR信号线采样，若发现INTR引脚信号为高电平，同时CPU内部中断允许标志IF=1时，CPU就进入中断响应周期，CPU响应中断时，暂停正在执行的主程序，从数据总线读取中断类型码，根据中断类型码从存储器的中断向量表查询相应的中断服务程序的入口地址，转到该地址去执行中断服务程序，在中断结束之后再返回主程序的断点处继续执行程序。<br>
-INTA：中断响应信号，输出，三态，低电平有效，在CPU响应外部中断请求后，发给请求中断的设备回答信号。<br>
-ALE：地址锁存允许信号，输出，高电平有效。当地址/数据总线分时传送地址信息时，ALE用作把地址信号锁存入8282/8283或74LS373锁存器的锁存控制信号。<br>
-DEN：数据允许，输出，三态，低电平有效，在单CPU系统中如果8286/8287作为数据总线的双向驱动器，则用DEN作为驱动器的选通信号。<br>
-DT/R：数据发送/接受控制，输出，三态，在单CPU系统中，如果用8286/8287作为数据总线的双向驱动，这是要用DT/R控制数据传送方向。<br>
-WR：写信号，输出，三态，低电平有效，WR信号有效时，表示CPU正在执行写存储器或写I/O口操作。<br>
-RD：读信号，输出，三态，低电平有效，RD信号有效时，表示CPU在读存储器或I/O口的数据。</p>
-<h3 id="cpu系统总线及其操作">CPU系统总线及其操作</h3>
-<p>①总线请求和仲裁阶段。需要使用总线的主模块提出请求，由总线仲裁机构确定把下一个传输周期的总线使用全分配给哪一个请求源。<br>
-②寻址阶段。去的使用权的主模块通过总线发出本次要访问的从模块的存储器地址或I/O端口地址，启动参与本次传输的从模块。<br>
-③数据传输阶段。主模块和从模块进行数据交换。在主模块发出的控制信号作用下，数据由源模块发出，经数据总线传送到目的模块。<br>
-④结束阶段。主、从模块的有关信息从系统总线上撤除，让出总线，以便其他模块能使用。</p>
 ]]></content>
     </entry>
 </feed>
